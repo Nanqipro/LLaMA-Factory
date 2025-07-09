@@ -155,6 +155,20 @@
     "hf_hub_url": "garage-bAInd/Open-Platypus",
     "ms_hub_url": "AI-ModelScope/Open-Platypus"
   },
+  "bespoke_stratos_17k": {
+    "file_name": "../LLM-models-datasets/Bespoke-Stratos-17k/bespokelabs___bespoke-stratos-17k/default-45716a10dbb21a2b/0.0.0/master/bespoke-stratos-17k-train.arrow",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system"
+    },
+    "tags": {
+      "role_tag": "from",
+      "content_tag": "value",
+      "user_tag": "human",
+      "assistant_tag": "gpt"
+    }
+  },
   "codealpaca": {
     "hf_hub_url": "sahil2801/CodeAlpaca-20k",
     "ms_hub_url": "AI-ModelScope/CodeAlpaca-20k"

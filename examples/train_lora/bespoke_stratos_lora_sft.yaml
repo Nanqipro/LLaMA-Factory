@@ -1,0 +1,53 @@
+### model
+model_name_or_path: ./LLM-models-datasets/Qwen2.5-3B  # 使用指定的Qwen2.5-3B模型
+trust_remote_code: true
+
+### method
+stage: sft
+do_train: true
+finetuning_type: lora
+lora_rank: 8
+lora_target: all
+
+### dataset
+dataset: bespoke_stratos_17k  # 使用在dataset_info.json中定义的数据集名称
+template: qwen  # 针对Qwen模型使用qwen模板
+cutoff_len: 4096  # 适合对话数据的序列长度
+max_samples: 16710  # 使用全部数据，可根据需要调整
+overwrite_cache: true
+preprocessing_num_workers: 16
+dataloader_num_workers: 4
+
+### output
+output_dir: saves/qwen2.5-3b-bespoke-stratos/lora/sft  # 更明确的输出目录名称
+logging_dir: logs/qwen2.5-3b-bespoke-stratos/lora/sft  # 日志输出目录
+logging_steps: 10
+save_steps: 500
+plot_loss: true
+overwrite_output_dir: true
+save_only_model: false
+report_to: tensorboard  # 使用tensorboard记录训练过程
+logging_first_step: true  # 记录第一步
+logging_nan_inf_filter: true  # 过滤NaN和Inf值
+log_level: info  # 日志级别
+
+### train
+per_device_train_batch_size: 2  # 根据显存调整，Qwen2.5-3B相对较小
+gradient_accumulation_steps: 4
+learning_rate: 5.0e-5  # 对话数据使用较小学习率
+num_train_epochs: 3.0
+lr_scheduler_type: cosine
+warmup_ratio: 0.1
+bf16: true  # Qwen2.5支持bf16，提升训练效率
+ddp_timeout: 180000000
+resume_from_checkpoint: null
+
+### eval
+val_size: 0.1  # 使用10%数据作为验证集
+per_device_eval_batch_size: 2
+eval_strategy: steps
+eval_steps: 500
+eval_on_start: false
+
+### 针对Qwen模型和中文数据优化
+use_fast_tokenizer: false  # Qwen模型推荐设置 

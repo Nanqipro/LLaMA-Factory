@@ -1,12 +1,12 @@
 #!/bin/bash
 
-# Bespoke-Stratos-17k LoRA 微调启动脚本
+# Generated X R1 Dataset02 中文编程指令数据集 LoRA 微调启动脚本
 # 用法：bash train_bespoke_stratos.sh
 
-echo "开始 Bespoke-Stratos-17k 数据集的 LoRA 微调..."
+echo "开始 Generated X R1 Dataset02 中文编程指令数据集的 LoRA 微调..."
 
 # 设置日志目录和文件
-LOG_DIR="logs/qwen2.5-3b-bespoke-stratos/lora/sft"
+LOG_DIR="logs/qwen2.5-3b-generated-x-r1/lora/sft"
 LOG_FILE="${LOG_DIR}/training_$(date +%Y%m%d_%H%M%S).log"
 ERROR_LOG="${LOG_DIR}/error_$(date +%Y%m%d_%H%M%S).log"
 
@@ -21,8 +21,8 @@ echo "日志将保存到: $LOG_FILE"
 echo "错误日志将保存到: $ERROR_LOG"
 
 # 检查数据集是否存在
-if [ ! -f "LLM-models-datasets/Bespoke-Stratos-17k/bespokelabs___bespoke-stratos-17k/default-45716a10dbb21a2b/0.0.0/master/bespoke-stratos-17k-train.arrow" ]; then
-    echo "错误：数据集文件不存在，请确保 Bespoke-Stratos-17k 数据集已正确下载！" | tee -a "$ERROR_LOG"
+if [ ! -f "LLM-models-datasets/generated_x_r1_dataset02/generated_x_r1_dataset.json" ]; then
+    echo "错误：数据集文件不存在，请确保 Generated X R1 Dataset02 数据集已正确放置在指定路径！" | tee -a "$ERROR_LOG"
     exit 1
 fi
 
@@ -57,14 +57,14 @@ fi
     
     if [ $TRAIN_EXIT_CODE -eq 0 ]; then
         echo "✅ 训练成功完成！"
-        echo "📁 模型保存在: saves/qwen2.5-3b-bespoke-stratos/lora/sft/"
+        echo "📁 模型保存在: saves/qwen2.5-3b-generated-x-r1/lora/sft/"
         echo "📊 训练日志保存在: $LOG_FILE"
-        echo "📈 TensorBoard日志保存在: logs/qwen2.5-3b-bespoke-stratos/lora/sft/"
+        echo "📈 TensorBoard日志保存在: logs/qwen2.5-3b-generated-x-r1/lora/sft/"
         
         # 输出最终的模型信息
-        if [ -d "saves/qwen2.5-3b-bespoke-stratos/lora/sft" ]; then
+        if [ -d "saves/qwen2.5-3b-generated-x-r1/lora/sft" ]; then
             echo "🗂️  输出文件列表:"
-            ls -la saves/qwen2.5-3b-bespoke-stratos/lora/sft/
+            ls -la saves/qwen2.5-3b-generated-x-r1/lora/sft/
         fi
     else
         echo "❌ 训练失败，退出代码: $TRAIN_EXIT_CODE"

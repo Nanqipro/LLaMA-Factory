@@ -1,0 +1,812 @@
+[
+  {
+    "instruction": "某市老旧小区电力改造工程，甲工程队单独施工需12天，乙工程队单独施工需18天。现计划两队共同施工，但施工期间遭遇以下情况：①共同施工3天后因暴雨停工2天；②复工后甲队增派50%人手效率提升50%，乙队人数不变。问完成全部工程至少需要多少天？",
+    "input": "'A': '9天', 'B': '10天', 'C': '11天', 'D': '12天'",
+    "output": "B"
+  },
+  {
+    "instruction": "某机关档案室需同时保管纸质公文和电子文档备份硬盘，下列管理措施中最符合《机关档案管理规定》和科学原理的是：",
+    "input": "'A': '夏季采用紫外线灯对受潮纸质档案进行每日消毒处理', 'B': '将备用打印机碳粉存放于30℃恒温箱保持干燥', 'C': '维持库房温度16-20℃、相对湿度45%-55%区间', 'D': '允许电子存储介质区域单日温度波动超过±8℃'",
+    "output": "C"
+  },
+  {
+    "instruction": "某市环保局规定：若企业项目符合《环保标准》（条件A），则需提交初审报告（条件B）；只有通过初审（条件B），方可组织专家评审（条件C）；专家评审通过（条件C）是项目提交局长办公会（结论D）的必要条件。现某项目已进入局长办公会议程，据此可推出：",
+    "input": "{'A': '该项目必须符合《环保标准》', 'B': '该项目通过安全风险预评估', 'C': '专家评审通过的项目可直接上会', 'D': '所有提交局长办公会的项目都符合《环保标准》'",
+    "output": "A"
+  },
+  {
+    "instruction": "某市养老保险规定缴费基数上限为当地月平均工资的300%，个人缴费比例为8%，单位缴费比例为16%。已知2023年该市月平均工资为8000元，职工王某月工资为25000元。王某及其单位每月养老保险缴费总额为：",
+    "input": "'A': '6000元', 'B': '1920元', 'C': '5760元', 'D': '5920元'",
+    "output": "C"
+  },
+  {
+    "instruction": "根据2023年经济普查报告与2020-2023年统计年鉴数据：2019年三大产业就业人数占比为第一产业30%、第二产业35%、第三产业35%；2023年调整为第一产业25%、第二产业32%、第三产业43%。统计年鉴显示，第三产业就业人数年均增长5.2%（复合增长率），第二产业年均增长1.8%，第一产业年均下降3.5%。以下说法正确的是：",
+    "input": "'A': '第一产业就业人数绝对值四年间减少量高于第三产业增加量', 'B': '按统计年鉴增速推算，第三产业占比应增长8个百分点，与经济普查数据矛盾', 'C': '第二产业2023年就业人数较2019年绝对减少', 'D': '第三产业复合增长率若保持5.2%，其占比变化与经济普查数据相符'",
+    "output": "B"
+  },
+  {
+    "instruction": "某政务大厅立体导览模型展开图如下，各面标记功能区：正面-咨询台，右面-服务窗口，左面-等候区，顶面-自助服务，底面-储物间，背面-办公室。将该展开图折叠成立方体后，绕竖直轴逆时针旋转90度，此时正面的功能区是？",
+    "input": "'A': '咨询台', 'B': '服务窗口', 'C': '等候区', 'D': '自助服务'",
+    "output": "C"
+  },
+  {
+    "instruction": "某市推行'一网通办'改革时，要求各部门将行政审批事项纳入统一政务平台。根据《法治政府建设实施纲要》，下列哪项举措符合'优化政府职责体系'要求？",
+    "input": "'A': '全面推行审批服务\\'马上办、网上办、就近办、一次办\\'，非涉密事项全程电子化办理', 'B': '建立\\'先备案后审查\\'机制，允许企业先行开展经营活动再补充材料', 'C': '将市场监管局的流通领域商品质量监督权划归质量技术监督局统一行使', 'D': '在行政效能评估中将群众满意度指标权重设定为考核总分值的30%'",
+    "output": "A"
+  },
+  {
+    "instruction": "某市2019-2023年季度财政支出增幅（%）依次为：3、6、5、9、7，请根据数字规律推断第六项增幅。注：奇偶项分别遵循独立规律。",
+    "input": "'A': '9', 'B': '12', 'C': '13.5', 'D': '14'",
+    "output": "B"
+  },
+  {
+    "instruction": "某市生态环境局拟于2024年9月10日召开全市污染防治攻坚推进会，要求各区县分局主要负责人参会。办公室秘书小王起草的通知中存在格式错误，请选出完全规范的选项。文件需标注秘密等级'秘密★1年'，并附《会议材料汇编》电子版。",
+    "input": "'A': '《市生态环境局关于召开污染防治攻坚推进会的通告》\n密级：秘密1年\n文号：环办发[2024]25号\n附件：电子版材料', 'B': '《市生态环境局污染防治攻坚推进会通知》\n文号：环办发〔2024〕25号\n秘密★1年\n附件：1.会议材料汇编（电子版）', 'C': '《关于召开全市污染防治攻坚推进会的通知》\n环办发〔2024〕25号\n（秘密★1年）\n附件：《会议材料汇编》电子版', 'D': '《市生态环境局关于召开全市污染防治攻坚推进会的通知》\n环办发〔2024〕25号 秘密★1年\n附件：1.会议材料汇编（电子版）'",
+    "output": "D"
+  },
+  {
+    "instruction": "在绝对零度下，推导三维自由电子气体的费米能级$\\varepsilon_F$时，以下哪个表达式正确反映了电子数密度$n$与费米能级的关系？已知电子服从费米-狄拉克分布，且满足$n = \\int_0^{\\infty} g(\\varepsilon) f_{FD}(\\varepsilon) d\\varepsilon$，其中$g(\\varepsilon)$为态密度。",
+    "input": "'A': '$\\varepsilon_F = \\frac{\\hbar^2}{2m}(6\\pi^2 n)^{1/3}$', 'B': '$\\varepsilon_F = \\frac{\\hbar^2}{2m}(3\\pi^2 n)^{2/3} + kT$', 'C': '$\\varepsilon_F = \\frac{\\hbar^2}{8m}(3\\pi^2 n)^{2/3}$', 'D': '$\\varepsilon_F = \\frac{\\hbar^2}{2m}(3\\pi^2 n)^{2/3}$'",
+    "output": "D"
+  },
+  {
+    "instruction": "在紧束缚近似下，二维正方晶格s电子能带表达式及性质的正确描述是？",
+    "input": "'A': '$E(\\mathbf{k})=E_0 - 2t[\\cos(k_x a) + \\cos(k_y a)]$\nΓ点展开：$E \\approx E_0 -4t + \\frac{ta^2}{2}(k_x^2+k_y^2)$\nM点$E=E_0+4t$，简并度1', 'B': '$E(\\mathbf{k})=E_0 + 2t[\\cos(k_x) + \\cos(k_y)]$\nΓ点展开：$E \\approx E_0 -4t + t(k_x^2+k_y^2)$\nM点$E=E_0-4t$，简并度2', 'C': '$E(\\mathbf{k})=E_0 - t[\\cos(2k_x a) + \\cos(2k_y a)]$\nΓ点展开：$E \\approx E_0 -2t + ta^2(k_x^2+k_y^2)$\nM点$E=E_0+2t$，简并度1', 'D': '$E(\\mathbf{k})=E_0 -4t[\\cos(k_x a/2) + \\cos(k_y a/2)]$\nΓ点展开：$E \\approx E_0 -8t + ta^2(k_x^2+k_y^2)/2$\nM点$E=E_0$，简并度4'",
+    "output": "A"
+  },
+  {
+    "instruction": "在计算三维理想玻色气体的玻色-爱因斯坦凝聚临界温度时，需推导单粒子态密度并处理积分。以下哪一选项正确体现了推导链？",
+    "input": "'A': '推导态密度时误将三维积分简化为二维，得到 \\(g(\\epsilon) = \\frac{V}{\\pi\\hbar^2}(2m)\\epsilon\\)，导致临界温度公式缺少质量项立方根', 'B': '正确转换球坐标系下波矢空间积分：\\(g(\\epsilon)d\\epsilon = \\frac{V}{(2\\pi)^3}4\\pi k^2 \\frac{dk}{d\\epsilon}d\\epsilon\\)，代入\\(k=\\sqrt{2m\\epsilon}/\\hbar\\)得标准态密度公式，最终积分得 \\(T_c \\propto \\frac{n^{2/3}\\hbar^2}{m k_B}\\)', 'C': '在临界温度计算时错误保留化学势\\(\\mu = -k_B T\\)，导致积分变为 \\(\\int_0^{\\infty} \\frac{\\sqrt{\\epsilon}}{e^{(\\epsilon +k_B T)/k_B T} - 1}d\\epsilon\\) 发散', 'D': '使用费米子积分形式 \\(N = \\int_0^{\\infty} \\frac{g(\\epsilon)}{e^{(\\epsilon-\\mu)/k_B T} + 1}d\\epsilon\\)，导致临界温度表达式多出\\(\\ln 2\\)因子'",
+    "output": "B"
+  },
+  {
+    "instruction": "If $f(x) = \\frac{3x-2}{x-2}$, what is the value of $f(-2) +f(-1)$? Express your answer as a common fraction.",
+    "input": "",
+    "output": "\\frac{7}{2}"
+  },
+  {
+    "instruction": "A regular hexagon can be divided into six equilateral triangles. If the perimeter of one of the triangles is 18 inches, what is the perimeter, in inches, of the regular hexagon?",
+    "input": "",
+    "output": "36"
+  },
+  {
+    "instruction": "In right triangle $ABC$ with $\\angle B = 90^\\circ$, we have $\\sin A = 2\\cos A$. What is $\\tan A$?",
+    "input": "",
+    "output": "2"
+  },
+  {
+    "instruction": "Evaluate $\\lceil{\\sqrt{21}}\\rceil^2$.",
+    "input": "",
+    "output": "25"
+  },
+  {
+    "instruction": "Find $\\prod_{n=2}^{\\infty}\\left(1-\\frac{1}{n^{2}}\\right)$.",
+    "input": "",
+    "output": "\\frac{1}{2}"
+  },
+  {
+    "instruction": "Find the value of $\\log_2{3} \\cdot \\log_3{4} \\cdot \\log_4{5} \\cdot \\log_5{6} \\cdot \\log_6{7} \\cdot \\log_7{8}$.",
+    "input": "",
+    "output": "3"
+  },
+  {
+    "instruction": "Solve for x: 3x + 5 = 17.",
+    "input": "",
+    "output": "4"
+  },
+  {
+    "instruction": "Solve for $x$, if $8^{4x-6}=\\left(\\frac{1}{2}\\right)^{x+5}$.",
+    "input": "",
+    "output": "\\frac{17}{13}"
+  },
+  {
+    "instruction": "If $x - 2x + 3x = 50$, what is the value of $x$?",
+    "input": "",
+    "output": "25"
+  },
+  {
+    "instruction": "Find the integer $n,$ $-90 \\le n \\le 90,$ such that $\\sin n^\\circ = \\sin 417^\\circ.$",
+    "input": "",
+    "output": "57"
+  },
+  {
+    "instruction": "What is the value of $\\sqrt{3^3 + 3^3 + 3^3}$?",
+    "input": "",
+    "output": "9"
+  },
+  {
+    "instruction": "If $y = 7 - 5x +4x^2$, what is the value of $y$ when $x=-2$?",
+    "input": "",
+    "output": "33"
+  },
+  {
+    "instruction": "Solve $\\frac{9-4x}{x+6}=7$ for $x$.",
+    "input": "",
+    "output": "-\\frac{33}{11}"
+  },
+  {
+    "instruction": "Compute $\\cos 120^\\circ$.",
+    "input": "",
+    "output": "-\\frac{1}{2}"
+  },
+  {
+    "instruction": "$3^n = 3 \\cdot 9^3 \\cdot 81^2$. What is the value of $n$?",
+    "input": "",
+    "output": "13"
+  },
+  {
+    "instruction": "Let $a_{0}, a_{1}, a_{2}, \\ldots$ denote the sequence of real numbers such that $a_{0}=2$ and $a_{n+1}=\\frac{a_{n}}{1+a_{n}}$ for $n \\geq 0$. Compute $a_{2025}$.",
+    "input": "",
+    "output": "\\frac{1}{1013}"
+  },
+  {
+    "instruction": "Let $x, y$, and $z$ be positive real numbers such that $(x \\cdot y)+z=(x+z) \\cdot(y+z)$. What is the maximum possible value of $x y z$?",
+    "input": "",
+    "output": "\\frac{1}{8}"
+  },
+  {
+    "instruction": "Compute $\\sum_{n=1}^{\\infty} \\sum_{k=1}^{n-1} \\frac{k}{2^{n+k}}$.",
+    "input": "",
+    "output": "\\frac{1}{4}"
+  },
+  {
+    "instruction": "Let $x, y$, and $z$ be distinct real numbers that sum to 0. Find the maximum possible value of $$\\frac{x y+y z+z x}{x^{2}+y^{2}+z^{2}}$$",
+    "input": "",
+    "output": "-\\frac{1}{2}"
+  },
+  {
+    "instruction": "$p$ and $q$ are primes such that the numbers $p+q$ and $p+7 q$ are both squares. Find the value of $p$.",
+    "input": "",
+    "output": "2"
+  },
+  {
+    "instruction": "Let $a$ and $b$ be relatively prime positive integers such that $\\dfrac ab=\\dfrac1{2^1}+\\dfrac2{3^2}+\\dfrac3{2^3}+\\dfrac4{3^4}+\\dfrac5{2^5}+\\dfrac6{3^6}+\\cdots$, where the numerators always increase by $1$, and the denominators alternate between powers of $2$ and $3$, with exponents also increasing by $1$ for each subsequent term. Compute $a+b$.",
+    "input": "",
+    "output": "5"
+  },
+  {
+    "instruction": "Evaluate $$\\sin \\left(1998^{\\circ}+237^{\\circ}\\right) \\sin \\left(1998^{\\circ}-1653^{\\circ}\\right)$$",
+    "input": "",
+    "output": "-\\frac{\\sqrt{3}}{4}"
+  },
+  {
+    "instruction": "Calculate $\\frac{3 \\cdot 5! + 15\\cdot 4!}{6!}$",
+    "input": "",
+    "output": "\\frac{1}{2}"
+  },
+  {
+    "instruction": "For what real value of $v$ is $\\frac{-21-\\sqrt{301}}{10}$ a root of $5x^2+21x+v$?",
+    "input": "",
+    "output": "2"
+  },
+  {
+    "instruction": "Let $d$ be a randomly chosen divisor of 2025. Find the expected value of $\\frac{d^{2}}{d^{2}+2025}$.",
+    "input": "",
+    "output": "\\frac{1}{2}"
+  },
+  {
+    "instruction": "Let $a, b, c, n$ be positive real numbers such that $\\frac{a+b}{a}=3, \\frac{b+c}{b}=4$, and $\\frac{c+a}{c}=n$. Find $n$.",
+    "input": "",
+    "output": "\\frac{3}{2}"
+  },
+  {
+    "instruction": "解方程 -5x + 36 = 0",
+    "input": "",
+    "output": "7.2"
+  },
+  {
+    "instruction": "If $x+\\frac{1}{y}=1$ and $y+\\frac{1}{z}=1$, what is the value of the product $xyz$?",
+    "input": "",
+    "output": "-1"
+  },
+  {
+    "instruction": "If $|x-2|=p$, where $x<2$, then what is $x-p$ in terms of $p$?",
+    "input": "",
+    "output": "2 - 2p"
+  },
+  {
+    "instruction": "If the straight line $$(x+y+1)+K(2x-y-1)=0$$ is perpendicular to $$2x+3y-8=0$$ then K = ?",
+    "input": "",
+    "output": "\\frac{1}{5}"
+  },
+  {
+    "instruction": "Two geometric sequences $a_1, a_2, a_3, \\ldots$ and $b_1, b_2, b_3, \\ldots$ have the same common ratio, with $a_1 = 27$, $b_1=99$, and $a_{15}=b_{11}$. Find $a_9.$",
+    "input": "",
+    "output": "\\frac{1}{3}"
+  },
+  {
+    "instruction": "The three points A, B, C form a triangle. AB=4, BC=5, AC=6. Let the angle bisector of \\angle A intersect side BC at D. Let the foot of the perpendicular from B to the angle bisector of \\angle A be E. Let the line through E parallel to AC meet BC at F. Compute DF.",
+    "input": "",
+    "output": "\\frac{5}{4}"
+  },
+  {
+    "instruction": "In triangle $A B C, \\angle B A C=60^{\\circ}$. Let $\\omega$ be a circle tangent to segment $A B$ at point $D$ and segment $A C$ at point $E$. Suppose $\\omega$ intersects segment $B C$ at points $F$ and $G$ such that $F$ lies in between $B$ and $G$. Given that $A D=F G=4$ and $B F=\\frac{1}{2}$, find the length of $C G$.",
+    "input": "",
+    "output": "\\frac{15}{2}"
+  },
+  {
+    "instruction": "Find the number of positive solutions to $\\sin(\\arccos(\\tan(\\arcsin x))) = x.$",
+    "input": "",
+    "output": "1"
+  },
+  {
+    "instruction": "A complete cycle of a traffic light takes 60 seconds. During each cycle the light is green for 25 seconds, yellow for 5 seconds, and red for 30 seconds. At a randomly chosen time, what is the probability that the light will NOT be green? Express your answer as a common fraction.",
+    "input": "",
+    "output": "\\frac{7}{12}"
+  },
+  {
+    "instruction": "We know that $4 = 2^{5r+1}$. What is the value of $r$?",
+    "input": "",
+    "output": "\\frac{1}{5}"
+  },
+  {
+    "instruction": "Find $\\tan \\frac{9 \\pi}{4}.$",
+    "input": "",
+    "output": "1"
+  },
+  {
+    "instruction": "How many units long is a segment whose endpoints are (2,3) and (7,15)?",
+    "input": "",
+    "output": "13"
+  },
+  {
+    "instruction": "A right, rectangular prism has three faces with areas of $6,8$ and $12$ square inches. What is the volume of the prism, in cubic inches?",
+    "input": "",
+    "output": "24"
+  },
+  {
+    "instruction": "Let $x$ and $y$ be real numbers, $y > x > 0,$ such that $\\frac{x}{y} + \\frac{y}{x} = 6.$ Find the value of $\\frac{x + y}{x - y}.$",
+    "input": "",
+    "output": "-\\sqrt{2}"
+  },
+  {
+    "instruction": "How many numbers are in the list $$ 1.5, 5.5, 9.5, 13.5, \\ldots, 41.5, 45.5? $$",
+    "input": "",
+    "output": "12"
+  },
+  {
+    "instruction": "If $1+2x+3x^2 + \\dotsb=9$, find $x$.",
+    "input": "",
+    "output": "\\frac{1}{3}"
+  },
+  {
+    "instruction": "Two fair six-sided dice are rolled. What is the probability that their sum is at least 10?",
+    "input": "",
+    "output": "\\frac{1}{6}"
+  },
+  {
+    "instruction": "A list of five positive integers has a median of 3 and a mean of 11. What is the maximum possible value of the list's largest element?",
+    "input": "",
+    "output": "45"
+  },
+  {
+    "instruction": "Evaluate $\\log_432$.",
+    "input": "",
+    "output": "\\frac{5}{2}"
+  },
+  {
+    "instruction": "Let $z = \\frac{-\\sqrt{3} + i}{2}.$ Compute $z^6.$",
+    "input": "",
+    "output": "1"
+  },
+  {
+    "instruction": "Given that the point $(8,8)$ is on the graph of $y=\\frac 14f\\left(\\frac 12x\\right)$, there is one point that must be on the graph of $y=f(x)$. What is the sum of coordinates of that point?",
+    "input": "",
+    "output": "32"
+  },
+  {
+    "instruction": "Let $p, q, r$ be primes such that $2 p+3 q=6 r$. Find $p+q+r$.",
+    "input": "",
+    "output": "10"
+  },
+  {
+    "instruction": "The sides of a triangle with positive area have lengths 4, 6, and $x$. The sides of a second triangle with positive area have lengths 4, 6, and $y$. What is the smallest positive number that is $\\textbf{not}$ a possible value of $|x-y|$?",
+    "input": "",
+    "output": "0"
+  },
+  {
+    "instruction": "Express $(5-4i)-2(3+6i)$ as a complex number.",
+    "input": "",
+    "output": "-1-16i"
+  },
+  {
+    "instruction": "在一篇文学分析中，提到莎士比亚的《哈姆雷特》中，哈姆雷特的叔叔克劳迪斯毒害了哈姆雷特的父亲，并篡夺了王位。请问克劳迪斯与哈姆雷特的父亲是什么关系？",
+    "input": "",
+    "output": "兄弟关系（克劳迪斯是哈姆雷特父亲的弟弟）"
+  },
+  {
+    "instruction": "在一场10:00开始的足球比赛中，梅西在第75分钟完成了一记精准的任意球破门，帮助阿根廷队以2:1战胜巴西队。请问梅西的进球发生在哪个时间点？",
+    "input": "",
+    "output": "11:15（10:00 + 75分钟）"
+  },
+  {
+    "instruction": "2022年全球电子废弃物总量为5700万吨，同比增长5%。如果这种增长趋势持续，预计2024年的电子废弃物总量是多少万吨？",
+    "input": "",
+    "output": "6282万吨"
+  },
+  {
+    "instruction": "若郑和下西洋始于1405年，最后一次航行结束于1433年，则整个航海活动持续了多少年？",
+    "input": "",
+    "output": "28年"
+  },
+  {
+    "instruction": "某实验初始温度25°C，每小时下降3°C，6小时后温度是多少？",
+    "input": "",
+    "output": "7°C"
+  },
+  {
+    "instruction": "《论语·为政》记载孔子提出'三十而立，四十不惑'的人生阶段论，其中'而立'指多少岁？",
+    "input": "",
+    "output": "30岁"
+  },
+  {
+    "instruction": "运送物资，第一次派出10辆A车，第二次增派15辆B车，运输量比第一次高50%。那么每辆A车的载货量是B车的多少倍？",
+    "input": "",
+    "output": "1.5倍"
+  },
+  {
+    "instruction": "弗莱德里克·肖邦出生在华沙以西46公里的埃拉佐瓦·沃拉，当时的华沙公国是拿破仑建立的波兰国家。教区的洗礼记录将他的生日定为1810年2月22日，并以拉丁语形式引用了他的名字Fridericus Franciscus。然而，作曲家和他的家人使用的生日是3月1日，现在普遍认为这是正确的日期。根据以上内容回答华沙公国是谁建立的？",
+    "input": "",
+    "output": "拿破仑"
+  },
+  {
+    "instruction": "弗莱德里克·肖邦出生在华沙以西46公里的埃拉佐瓦·沃拉，当时的华沙公国是拿破仑建立的波兰国家。教区的洗礼记录将他的生日定为1810年2月22日，并以拉丁语形式引用了他的名字Fridericus Franciscus。然而，作曲家和他的家人使用的生日是3月1日，现在普遍认为这是正确的日期。根据以上内容回答肖邦的出生地埃拉佐瓦·沃拉位于华沙的哪个方向？",
+    "input": "",
+    "output": "西方"
+  },
+  {
+    "instruction": "西藏曾是与唐朝同时代的强国。在9世纪西藏帝国崩溃之前，它一直是唐朝统治内亚的主要对手。西藏雅鲁藏布江统治者还与唐朝签订了多项和平条约，最终在821年签订了一项条约，确定了西藏与中国的边界。请问西藏帝国在哪个世纪灭亡了？",
+    "input": "",
+    "output": "9世纪"
+  },
+  {
+    "instruction": "游戏有16个地下城，包含了与敌人战斗、收集物品和解决谜题的区域。地牢是通过一个巨大的超世界连接起来的，在这个世界上可以徒步旅行、骑马或者传送。那么这个游戏一共有几个地下城？",
+    "input": "",
+    "output": "16个"
+  },
+  {
+    "instruction": "《天蝎座》是于文文在2024年发行的第五张个人音乐创作专辑，由索尼音乐发行，共收录了10首歌曲。那么截至2024年于文文一共发行过几张个人专辑？",
+    "input": "",
+    "output": "5张"
+  },
+  {
+    "instruction": "美洲豹队以15比1的战绩结束了常规赛，四分卫牛顿被评为全美橄榄球联盟最有价值球员（MVP）。他们在NFC锦标赛中以49比15击败了亚利桑那红衣主教队，并晋级自1995年球队成立以来的第二次超级杯。野马队以12胜4负的战绩结束了常规赛，并在亚足联冠军赛中以20胜18负击败了新英格兰爱国者队，剥夺了他们从第四十九届超级杯卫冕的机会。他们加入了爱国者队、达拉斯牛仔队和匹兹堡钢人队，成为四支在超级碗中出场八次的球队之一。提问：丹佛野马队在超级杯上出场了多少次？",
+    "input": "",
+    "output": "8次"
+  },
+  {
+    "instruction": "在爱尔兰，私立学校不常见，政府只会支付固定数量教师的薪酬。学校如果想雇佣额外的教师，他们需要支付薪酬。与世界其他地区相比，爱尔兰的学费往往相对较低，但爱尔兰的许多私立学校学费是寄宿学校的两倍。大多数学校的平均年费约为5000欧元，但其中一些学校也提供寄宿，费用可能会上升到每年25000欧元。由此可知，爱尔兰私立学校的典型年学费是多少？",
+    "input": "",
+    "output": "约5000欧元"
+  },
+  {
+    "instruction": "Coming off their road win over the Lions, the Steelers went home for a divisional match with the Cleveland Browns. After a scoreless first quarter, Pittsburgh came out striking in the second quarter as quarterback Ben Roethlisberger completed an 8-yard touchdown pass to tight end Heath Miller and a 52-yard touchdown pass to wide receiver Hines Ward. The Browns immediately struck back as wide receiver Joshua Cribbs returned a kickoff 98&#160;yards for a touchdown. Pittsburgh would close out the half with a 32-yard field goal from kicker Jeff Reed. Cleveland tried to catch up as quarterback Derek Anderson completed a 1-yard touchdown pass to fullback Lawrence Vickers, yet the Steelers answered with a 2-yard touchdown run from running back Rashard Mendenhall. Pittsburgh would then close the game out in the fourth quarter with Reed kicking a 39-yard field goal. With their 12th-straight win over the Browns, the Steelers improved to 4-2. With the Ravens' loss to the Vikings, and the Bengals' loss to the Texans that same week, the Steelers are now tied with the Bengals at the top of the AFC North.How many yards was the games longest TD?",
+    "input": "",
+    "output": "98 yards"
+  },
+  {
+    "instruction": "Trying to snap a two-game losing streak, the Packers went home for a Week 10 duel with the Dallas Cowboys. Green Bay would get the only points of the first half in the form of a 48-yard field goal from kicker Mason Crosby. After a scoreless third quarter, the Packers would take a huge lead in the fourth quarter with quarterback Aaron Rodgers' 1-yard touchdown run and his 2-yard touchdown pass to tight end Spencer Havner. The Cowboys would try to rally with quarterback Tony Romo's 9-yard touchdown pass to wide receiver Roy Williams, Green Bay's defense would hold strong for a huge victory. With the win, not only do the Packers improved to 5-4, but also the Packers finally beat Dallas for revenge after 5 years of losing since their meeting with the Cowboys in 2004.So, who was the first player to receive a touchdown pass?",
+    "input": "",
+    "output": "Spencer Havner"
+  },
+  {
+    "instruction": "The other magazine, The Juggler, is released twice a year and focuses on student literature and artwork.How often is Notre Dame's the Juggler published?",
+    "input": "",
+    "output": "Twice a year"
+  },
+  {
+    "instruction": "This changed in 1924 with formal requirements developed for graduate degrees, including offering Doctorate (PhD) degrees. The granting of Doctorate degrees first occurred in what year at Notre Dame?",
+    "input": "",
+    "output": "1924"
+  },
+  {
+    "instruction": "In his native Poland, in France, where he composed most of his works, and beyond, Chopin's music, his status as one of music's earliest superstars, his association (if only indirect) with political insurrection, his love life and his early death have made him, in the public consciousness, a leading symbol of the Romantic era. Where did Chopin create the majority of his compositions?",
+    "input": "",
+    "output": "France"
+  },
+  {
+    "instruction": "传统上，离网光伏系统使用可充电电池储存多余的电能。有了并网系统，多余的电力可以输送到输电网，而标准的电网电力可以用来满足短缺。净计量计划为家庭系统向电网输送的电力提供了信用。当家庭产生的电量超过其消耗的电量时，这是通过“向后滚动”电表来实现的。离网光伏系统用来储存多余的电能是什么？",
+    "input": "",
+    "output": "可充电电池"
+  },
+  {
+    "instruction": "《春江花月夜》是唐代诗人张若虚创作的七言歌行，最早收录于郭茂倩编撰的《乐府诗集》中。此诗沿用陈隋乐府旧题，运用富有生活气息的清丽之笔，以江为场景，以月为主体，描绘了一幅幽美邈远、惝恍迷离的春江月夜图。《乐府诗集》的作者是谁？",
+    "input": "",
+    "output": "郭茂倩"
+  },
+  {
+    "instruction": "张若虚（约660—约720），唐代诗人。扬州（今属江苏）人。官兖州兵曹。与贺知章、张旭、包融齐名，号称“吴中四士”。事迹略见于《旧唐书·贺知章传》。《全唐诗》仅存其诗二首。张若虚大概活了多少年？",
+    "input": "",
+    "output": "约60年"
+  },
+  {
+    "instruction": "A食品的配料表包括：水（70%）、浓缩咖啡液（10%）、白砂糖（10%）、实用香精（10%），则A的最主要的配料为？",
+    "input": "",
+    "output": "水"
+  },
+  {
+    "instruction": "科学记数法又称科学记号或科学记法，是一种记录或标志数的科学表示法，可用来表示由于太大或太小而不能方便地用十进制表示的数，因为这样做需要写出一串异常长的数字。科学家、数学家和工程师普遍使用这种以10为底数的表示法，部分原因是它可以简化某些算术运算。在科学计算器上，通常使用“SCI”作为显示模式。科学记数法最早由阿基米德提出。科学记数法在科学计算器上的显示模式通常为？",
+    "input": "",
+    "output": "SCI"
+  },
+  {
+    "instruction": "美国籍枢机罗伯特·方济各·普雷沃斯特经秘密会议4轮选举，当选为教宗良十四世。教宗良十四世的国籍为？",
+    "input": "",
+    "output": "美国"
+  },
+  {
+    "instruction": "巴西帝国皇储伊莎贝尔签署法令废除奴隶制度，也是最后一个废除奴隶制度的西方国家。谁签署了法令废除奴隶制度？",
+    "input": "",
+    "output": "伊莎贝尔"
+  },
+  {
+    "instruction": "中台世界博物馆为一间以佛教文物为主题之博物馆。设立于南投县埔里镇中台禅寺旁，2009年10月3日中台山博物馆开馆，2012年8月中台世界博物馆动土奠基大典，2016年8月13日中台世界博物馆开幕。创办人为惟觉老和尚，其宗旨在于为弘宗演教，落实“佛法艺术化”，保存佛教历史文化，进而承继、研究、发扬佛教艺术。常设展有近两百件汉传、藏传与南传三大地区历代佛教文物，并以石雕造像为主轴。特展举办有“地涌天宝──浙江省博物馆珍品特展”、“烟霞供养──馆藏佛教绘画暨传统书画展”、“石墨真宝－西安碑林博物馆碑拓特展”等。仿唐代长安古城建筑，地下二层、地上三层，展示面积广达五千坪，多达十八个展厅，珍藏展出历代珍贵佛教文物。中台世界博物馆的主题是？",
+    "input": "",
+    "output": "佛教文物"
+  },
+  {
+    "instruction": "启功（1912年7月26日—2005年6月30日），爱新觉罗氏，字元白（或作元伯），满族正蓝旗人，中国古典文献学家、书法家。清世宗嫡派后裔，封爵奉恩将军。幼孤，自称学习上得益于姑姑甚多。启功全名是？",
+    "input": "",
+    "output": "爱新觉罗·启功"
+  },
+  {
+    "instruction": "阿特金斯饮食法是一个声称具有减肥功效的伪科学饮食方法，由美国医生罗伯特·阿特金斯于1970年提出。他认为减重的关键是限制碳水化合物的摄取，而可以吃高蛋白的食品，而多吃肉类、鱼，类似生酮饮食，从而将人体从消耗碳水化合物的代谢转化成以消耗脂肪为主的代谢模式。阿特金斯饮食法没有足够的证据支撑其在减肥方面的有效性。近年来也作为多种疾病如癫痫的可能性疗法。阿特金斯饮食法是哪年被提出的？",
+    "input": "",
+    "output": "1970年"
+  },
+  {
+    "instruction": "全天断食法包括定期断食一整天。最严格的形式是隔日断食（ADF, Alternate-day fasting），也就是24小时断食，然后接着进入24小时非断食期，不断循环。改良版隔日断食（ADMF）和5：2饮食 - 后者定义为每周五天不断食，每周两天进行断食或改良的断食。在禁食期间，可以允许消耗大约500到700卡路里的热量，或大约25%的每日常规卡路里摄入量，而不是完全禁食。隔日断食的非断食期是几个小时？",
+    "input": "",
+    "output": "24小时"
+  },
+  {
+    "instruction": "在美国豆浆曾经长期为最流行之非动物奶，大约从2010年起杏仁奶开始扩大流行，并于2013年超越豆浆成为流行之最。其他在美国流行的植物奶有米浆和椰奶。在欧洲豆浆和燕麦奶较普遍，其他还有大麻籽奶、腰果奶、榛果奶，还有由豌豆和羽扇豆制成的奶。杏仁奶哪一年在美国成为最流行的非动物奶？",
+    "input": "",
+    "output": "2013年"
+  },
+  {
+    "instruction": "弗朗切斯科·里奇·比蒂于1993年至1999年担任欧洲网球联合会主席。请问他一共担任了几年欧洲网球联合会主席？",
+    "input": "",
+    "output": "6年"
+  },
+  {
+    "instruction": "东汉末年，张道陵在西南蜀地益州（在今成都）称得太上老君（老子）“授以三天正法，命为天师”，从而创立了正一道（又称天师道、五斗米道）。在中原，也有张角创立了太平道，宣称“苍天已死，黄天当立”，组织民众起事反抗东汉王朝（史称黄巾之乱或黄巾起义）。正一道和太平道的出现，标志着道教开始成为有严密思想体系和组织制度的宗教。在这种社会背景下，订定道教经书的主要创始人物张道陵综合传统的鬼神崇拜、神仙思想、阴阳术数、卜筮巫术，并与汉代所崇尚黄老道思潮逐渐融合。道教教派也于此时形成，道教的宗教形态初具。那么，是谁创立了太平道？",
+    "input": "",
+    "output": "张角"
+  },
+  {
+    "instruction": "在洋中脊上涌的地幔物质形成新的洋底，大约耗用50my从摄氏1000度冷却到平衡态并下沉到最大深度。最大的洋底是太平洋板块，大约运动速度10cm/yr。冷却的大洋地壳容易变质为榴辉岩，比幔岩的密度更大。太平洋板块的大约运动速度是多少？",
+    "input": "",
+    "output": "10厘米/年"
+  },
+  {
+    "instruction": "中国大陆从1950年代末开始研究地名标准化，并从综合研究地名产生、发展和分布规律，于1977年成立中国地名委员会。此委员会于1998年所编之《外国地名译名手册》是中国翻译外国地名的主要根据。另外，地名委员会所编之《外国地名汉字译写通则》也十分重要。中国翻译外国地名的主要根据是哪本书？",
+    "input": "",
+    "output": "《外国地名译名手册》"
+  },
+  {
+    "instruction": "EOS R50是目前最轻的EOS R系列相机，重量仅375克，它具备无裁切6K超取样4K30p短片功能，可拍摄出高清影片；“近拍展示”模式则可拍摄产品或料理特写。此外，EOS R50还提供“创意包围”和“进阶A+”等功能，让使用者得以拍出具艺术效果照片。目前最轻的EOS R系列相机有多少克？",
+    "input": "",
+    "output": "375克"
+  },
+  {
+    "instruction": "《东京公园》全片以公园作为情节发展的主要舞台，看似平凡平行的人物际遇，都在公园中交错互动，提供心灵交流的稳定力量，对比于现代人的疏离焦虑，也成为另一种天堂般的理想桃花源。这是一部青山真治执导的日本电影，2011年6月18日上映。由三浦春马、荣仓奈奈等主演。荣获罗加诺国际电影节金豹奖评审员特别奖。东京公园》的导演是谁？",
+    "input": "",
+    "output": "青山真治"
+  },
+  {
+    "instruction": "18世纪末到19世纪初，著名的音乐家海顿，莫扎特和年轻的贝多芬都在古钢琴这种乐器上写下他们的钢琴音乐。从1782年左右，莫扎特一直都为古钢琴这种乐器作曲。自1785年起，他亦以古钢琴作为主要表演的项目，直至他1791年去世为止。他所用的古钢琴，是莫扎特时代最著名的维也纳钢琴制造商之一安顿·瓦尔特所制作的。该古钢琴现永久存放在萨尔茨堡市的莫扎特博物馆之内。海顿也拥有瓦尔特钢琴，贝多芬也曾表示希望购买一架。从贝多芬的时代开始，古钢琴开始了一个稳定演变的时期，直至到19世纪末现代三角钢琴出现为止。莫扎特是哪年去世的？",
+    "input": "",
+    "output": "1791年"
+  },
+  {
+    "instruction": "1912年2月华商电车有限公司成立，设于南市沪杭车站路（今南车站路），集股20万元。民国6年（1917年）初，身兼商办上海内地电灯有限公司、上海华商电车有限公司2家公司总经理的陆伯鸿，为方便经营管理，提出车、灯合并的建议。经过2家公司的董事会反复讨论，于翌年1月7日正式合并为上海华商电气股份有限公司。1937年12月30日，总经理陆伯鸿遇刺身亡，公司停业。上海华商电气股份有限公司成立的具体日期是？",
+    "input": "",
+    "output": "1918年1月7日"
+  },
+  {
+    "instruction": "尽管世界各地有许多通讯社，但全球最大的三家通讯社则分别是：美联社、路透社和法新社。这三大通讯社在全球各地区均设有办事处，报道范围涵盖所有领域。这三大通讯社都遵循同一理念，即向所有订阅用户提供统一的客观的新闻内容；同时拒绝向保守派或自由派新闻机构提供额外的不同的新闻报道。英国记者兼分析家乔纳森·芬比是如此阐释这一理念的。全球最大的三家通讯社是美联社、路透社和哪一家？",
+    "input": "",
+    "output": "法新社"
+  },
+  {
+    "instruction": "四大文明古国为华人地区对四大古文明的旧称，中文圈简单地把“古巴比伦、古埃及、古中国、古印度”看做世界四大文明古国。按照先后顺序排列为“美索不达米亚→埃及→印度→中国”。西方历史学上，比起四大文明古国，则采用“文明摇篮”这一说法，西方学者们认为除了欧亚大陆的四个河流文明发源地以外，另外在美洲还有两个，即位于现代墨西哥的玛雅文明，以及位于现代秘鲁的印加文明，但不以四大古文明、或者六大古文明称呼之，因为爱琴海文明等文明，因影响了西方文明，也可以符合“文明摇篮”的定义。世界四大文明古国按照先后顺序排列最先出现的是？",
+    "input": "",
+    "output": "古巴比伦（美索不达米亚）"
+  },
+  {
+    "instruction": "小明去文具店买了3支钢笔，每支钢笔12元，又买了一个笔记本花了8元。他一共花了多少钱？",
+    "input": "",
+    "output": "44元"
+  },
+  {
+    "instruction": "化学实验中，每升溶液需加入0.15克催化剂。若配制25升溶液，需多少克催化剂？",
+    "input": "",
+    "output": "3.75克"
+  },
+  {
+    "instruction": "国际会议从北京时间9:15开始，持续2小时50分钟。会议结束时是几点？",
+    "input": "",
+    "output": "12:05"
+  },
+  {
+    "instruction": "The show has received recognition as one of Britain's finest television programmes, winning the 2006 British Academy Television Award for Best Drama Series and five consecutive (2005–2010) awards at the National Television Awards during Russell T Davies' tenure as executive producer. In 2011, Matt Smith became the first Doctor to be nominated for a BAFTA Television Award for Best Actor and in 2016, Michelle Gomez became the first female to receive a BAFTA nomination for the series, getting a Best Supporting Actress nomination for her work as Missy. What Doctor Who actress was nominated for an award in 2016?",
+    "input": "",
+    "output": "Michelle Gomez"
+  },
+  {
+    "instruction": "The English name 'Normans' comes from the French words Normans/Normanz, plural of Normant, modern French normand, which is itself borrowed from Old Low Franconian Nortmann 'Northman' or directly from Old Norse Norðmaðr, Latinized variously as Nortmannus, Normannus, or Nordmannus (recorded in Medieval Latin, 9th century) to mean 'Norseman, Viking'. When was the Latin version of the word Norman first recorded?",
+    "input": "",
+    "output": "9th century"
+  },
+  {
+    "instruction": "Pattern recognition receptors are proteins used by nearly all organisms to identify molecules associated with pathogens. Antimicrobial peptides called defensins are an evolutionarily conserved component of the innate immune response found in all animals and plants, and represent the main form of invertebrate systemic immunity. The complement system and phagocytic cells are also used by most forms of invertebrate life. Ribonucleases and the RNA interference pathway are conserved across all eukaryotes, and are thought to play a role in the immune response to viruses. What cell type is also used for immune response in most types of invertebrate life?",
+    "input": "",
+    "output": "Phagocytic cells"
+  },
+  {
+    "instruction": "Far from being a mere 'stopgap' pope, to great excitement, John XXIII called for an ecumenical council fewer than ninety years after the First Vatican Council (Vatican I's predecessor, the Council of Trent, had been held in the 16th century). This decision was announced on 29 January 1959 at the Basilica of Saint Paul Outside the Walls. Cardinal Giovanni Battista Montini, who later became Pope Paul VI, remarked to Giulio Bevilacqua that 'this holy old boy doesn't realise what a hornet's nest he's stirring up'. From the Second Vatican Council came changes that reshaped the face of Catholicism: a comprehensively revised liturgy, a stronger emphasis on ecumenism, and a new approach to the world. Who did Cardinal Giovanni Battista Montini later become?",
+    "input": "",
+    "output": "Pope Paul VI"
+  },
+  {
+    "instruction": "Jidaigeki (literally historical drama) has always been a staple program on Japanese movies and television. The programs typically feature a samurai. Samurai films and westerns share a number of similarities and the two have influenced each other over the years. One of Japan’s most renowned directors, Akira Kurosawa, greatly influenced the samurai aspect in western film-making.George Lucas’ Star Wars series incorporated many aspects from the Seven Samurai film. One example is that in the Japanese film, seven samurai warriors are hired by local farmers to protect their land from being overrun by bandits; In George Lucas’ Star Wars: A New Hope, a similar situation arises. Kurosawa was inspired by the works of director John Ford and in turn Kurosawa's works have been remade into westerns such as The Seven Samurai into The Magnificent Seven and Yojimbo into A Fistful of Dollars. There is also a 26 episode anime adaptation (Samurai 7) of The Seven Samurai. Along with film, literature containing samurai influences are seen as well. Who directed 'Seven Samurai'?",
+    "input": "",
+    "output": "Akira Kurosawa"
+  },
+  {
+    "instruction": "According to CIA World Factbook, the people of Republic of the Congo are largely a mix of Catholics (33.1%), Awakening Lutherans (22.3%) and other Protestants (19.9%). Followers of Islam make up 1.6%, and this is primarily due to an influx of foreign workers into the urban centers. What percentage of Congolese citizens identify as Awakening Lutherans?",
+    "input": "",
+    "output": "22.3%"
+  },
+  {
+    "instruction": "def climbing_stairs(n: int) -> int:\n    \"\"\" You are climbing a staircase. It takes n steps to reach the top.\n    Each time you can either climb 1 or 2 steps. In how many distinct ways can you\n    climb to the top?\"\"\"",
+    "input": "",
+    "output": "def climbing_stairs(n: int) -> int:\n    if n <= 2:\n        return n\n    a, b = 1, 2\n    for _ in range(3, n+1):\n        a, b = b, a+b\n    return b"
+  },
+  {
+    "instruction": "def sqrt_funtion_impl(x: int) -> int:\n    \"\"\" Given a non-negative integer x, return the square root of x rounded down to the \n    nearest integer.\"\"\"",
+    "input": "",
+    "output": "def sqrt_funtion_impl(x: int) -> int:\n    if x < 2:\n        return x\n    lo, hi = 0, x\n    while lo <= hi:\n        mid = (lo + hi) // 2\n        if mid * mid <= x < (mid+1)*(mid+1):\n            return mid\n        elif mid * mid > x:\n            hi = mid - 1\n        else:\n            lo = mid + 1"
+  },
+  {
+    "instruction": "def add_binary(a: str, b: str) -> str:\n    \"\"\" Given two binary strings a and b, return their sum as a binary string.\"\"\"",
+    "input": "",
+    "output": "def add_binary(a: str, b: str) -> str:\n    carry = 0\n    result = []\n    i, j = len(a)-1, len(b)-1\n    while i >= 0 or j >= 0 or carry:\n        total = carry\n        if i >= 0:\n            total += int(a[i])\n            i -= 1\n        if j >= 0:\n            total += int(b[j])\n            j -= 1\n        carry = total // 2\n        result.append(str(total % 2))\n    return ''.join(result[::-1])"
+  },
+  {
+    "instruction": "from typing import List\n\ndef large_integer_plus_one(digits: List[int]) -> List[int]:\n    \"\"\" Increment the large integer by one and return the resulting array of digits.\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef large_integer_plus_one(digits: List[int]) -> List[int]:\n    n = len(digits)\n    for i in range(n-1, -1, -1):\n        if digits[i] < 9:\n            digits[i] += 1\n            return digits\n        digits[i] = 0\n    return [1] + digits"
+  },
+  {
+    "instruction": "def length_of_last_word(s: str) -> int:\n    \"\"\" Given a string s consisting of words and spaces, return the length of the last word in the string.\"\"\"",
+    "input": "",
+    "output": "def length_of_last_word(s: str) -> int:\n    return len(s.strip().split()[-1])"
+  },
+  {
+    "instruction": "from typing import List\n\ndef remove_duplicates(nums: List[int]) -> int:\n    \"\"\" Remove duplicates in-place such that each unique element appears only once.\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef remove_duplicates(nums: List[int]) -> int:\n    if not nums:\n        return 0\n    k = 1\n    for i in range(1, len(nums)):\n        if nums[i] != nums[i-1]:\n            nums[k] = nums[i]\n            k += 1\n    return k"
+  },
+  {
+    "instruction": "def valid_parentheses(s: str) -> bool:\n    \"\"\" Given a string s containing just the characters '(', ')', '{', '}', '[' and ']',\n    determine if the input string is valid.\"\"\"",
+    "input": "",
+    "output": "def valid_parentheses(s: str) -> bool:\n    stack = []\n    mapping = {')': '(', '}': '{', ']': '['}\n    for char in s:\n        if char in mapping:\n            top = stack.pop() if stack else '#'\n            if mapping[char] != top:\n                return False\n        else:\n            stack.append(char)\n    return not stack"
+  },
+  {
+    "instruction": "from typing import List\n\ndef longest_common_prefix(strs: List[str]) -> str:\n    \"\"\" Write a function to find the longest common prefix string amongst an array of strings.\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef longest_common_prefix(strs: List[str]) -> str:\n    if not strs:\n        return \"\"\n    prefix = strs[0]\n    for s in strs[1:]:\n        while s[:len(prefix)] != prefix:\n            prefix = prefix[:-1]\n            if not prefix:\n                return \"\"\n    return prefix"
+  },
+  {
+    "instruction": "def is_palindrome_number(x: int) -> bool:\n    \"\"\" Given an integer x, return true if x is a palindrome, and false otherwise.\"\"\"",
+    "input": "",
+    "output": "def is_palindrome_number(x: int) -> bool:\n    if x < 0:\n        return False\n    s = str(x)\n    return s == s[::-1]"
+  },
+  {
+    "instruction": "from typing import List\n\ndef find_single_number(nums: List[int]) -> int:\n    \"\"\" Given a non-empty array of integers nums, every element appears twice except for one.\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef find_single_number(nums: List[int]) -> int:\n    result = 0\n    for num in nums:\n        result ^= num\n    return result"
+  },
+  {
+    "instruction": "def get_sheet_column_title(columnNumber: int) -> str:\n    \"\"\" Given an integer columnNumber, return its corresponding column title as it appears in an Excel sheet.\"\"\"",
+    "input": "",
+    "output": "def get_sheet_column_title(columnNumber: int) -> str:\n    result = \"\"\n    while columnNumber > 0:\n        columnNumber -= 1\n        result = chr(65 + columnNumber % 26) + result\n        columnNumber //= 26\n    return result"
+  },
+  {
+    "instruction": "from typing import List\n\ndef find_majority_element(nums: List[int]) -> int:\n    \"\"\" Given an array nums of size n, return the majority element.\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef find_majority_element(nums: List[int]) -> int:\n    count = 0\n    candidate = None\n    for num in nums:\n        if count == 0:\n            candidate = num\n        count += (1 if num == candidate else -1)\n    return candidate"
+  },
+  {
+    "instruction": "def reverse_bits(n: str) -> int:\n    \"\"\" Reverse bits of a given 32 bits unsigned integer.\"\"\"",
+    "input": "",
+    "output": "def reverse_bits(n: str) -> int:\n    reversed_str = n[::-1]\n    return int(reversed_str, 2)"
+  },
+  {
+    "instruction": "def hamming_weight(n: int) -> int:\n    \"\"\" Given a positive integer n, write a function that returns the number of set bits.\"\"\"",
+    "input": "",
+    "output": "def hamming_weight(n: int) -> int:\n    count = 0\n    while n:\n        count += n & 1\n        n >>= 1\n    return count"
+  },
+  {
+    "instruction": "def is_happy_number(n: int) -> bool:\n    \"\"\" Write an algorithm to determine if a number n is happy.\"\"\"",
+    "input": "",
+    "output": "def is_happy_number(n: int) -> bool:\n    seen = set()\n    while n != 1 and n not in seen:\n        seen.add(n)\n        n = sum(int(d)**2 for d in str(n))\n    return n == 1"
+  },
+  {
+    "instruction": "def check_isomorphic_strings(s: str, t: str) -> bool:\n    \"\"\" Given two strings s and t, determine if they are isomorphic.\"\"\"",
+    "input": "",
+    "output": "def check_isomorphic_strings(s: str, t: str) -> bool:\n    if len(s) != len(t):\n        return False\n    s_to_t = {}\n    t_to_s = {}\n    for i in range(len(s)):\n        if s[i] in s_to_t:\n            if s_to_t[s[i]] != t[i]:\n                return False\n        else:\n            s_to_t[s[i]] = t[i]\n        if t[i] in t_to_s:\n            if t_to_s[t[i]] != s[i]:\n                return False\n        else:\n            t_to_s[t[i]] = s[i]\n    return True"
+  },
+  {
+    "instruction": "from typing import List\n\ndef check_contains_duplicate(nums: List[int], k: int) -> bool:\n    \"\"\" Given an integer array nums and an integer k, return true if there are two distinct\n    indices i and j such that nums[i] == nums[j] and abs(i - j) <= k.\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef check_contains_duplicate(nums: List[int], k: int) -> bool:\n    pos = {}\n    for i, num in enumerate(nums):\n        if num in pos and i - pos[num] <= k:\n            return True\n        pos[num] = i\n    return False"
+  },
+  {
+    "instruction": "from typing import List\n\ndef summary_ranges(nums: List[int]) -> List[str]:\n    \"\"\" Return the smallest sorted list of ranges that cover all the numbers in the array exactly.\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef summary_ranges(nums: List[int]) -> List[str]:\n    if not nums:\n        return []\n    ranges = []\n    start = nums[0]\n    for i in range(1, len(nums)):\n        if nums[i] != nums[i-1] + 1:\n            if start == nums[i-1]:\n                ranges.append(str(start))\n            else:\n                ranges.append(f\"{start}->{nums[i-1]}\")\n            start = nums[i]\n    if start == nums[-1]:\n        ranges.append(str(start))\n    else:\n        ranges.append(f\"{start}->{nums[-1]}\")\n    return ranges"
+  },
+  {
+    "instruction": "def valid_anagram(s: str, t: str) -> bool:\n    \"\"\" Given two strings s and t, return true if t is an anagram of s, and false otherwise.\"\"\"",
+    "input": "",
+    "output": "def valid_anagram(s: str, t: str) -> bool:\n    from collections import Counter\n    return Counter(s) == Counter(t)"
+  },
+  {
+    "instruction": "from typing import List\n\ndef find_missing_number(nums: List[int]) -> int:\n    \"\"\" Given an array nums containing n distinct numbers in the range [0, n], return the only \n    number in the range that is missing from the array.\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef find_missing_number(nums: List[int]) -> int:\n    n = len(nums)\n    total = n * (n + 1) // 2\n    actual = sum(nums)\n    return total - actual"
+  },
+  {
+    "instruction": "from typing import List\n\ndef handout_candy(ratings: List[int]) -> int:\n    \"\"\" Calculate and return the minimum number of candy that needs to be prepared.\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef handout_candy(ratings: List[int]) -> int:\n    n = len(ratings)\n    candies = [1] * n\n    for i in range(1, n):\n        if ratings[i] > ratings[i-1]:\n            candies[i] = candies[i-1] + 1\n    for i in range(n-2, -1, -1):\n        if ratings[i] > ratings[i+1]:\n            candies[i] = max(candies[i], candies[i+1] + 1)\n    return sum(candies)"
+  },
+  {
+    "instruction": "from collections import Counter\n\ndef minimum_coverage_substring(s: str, t: str) -> str:\n    \"\"\" Returns the smallest substring that covers all characters of t in s.\"\"\"",
+    "input": "",
+    "output": "from collections import Counter\n\ndef minimum_coverage_substring(s: str, t: str) -> str:\n    if not t or not s:\n        return \"\"\n    t_count = Counter(t)\n    required = len(t_count)\n    l, r = 0, 0\n    formed = 0\n    window_counts = {}\n    ans = float(\"inf\"), None, None\n    while r < len(s):\n        char = s[r]\n        window_counts[char] = window_counts.get(char, 0) + 1\n        if char in t_count and window_counts[char] == t_count[char]:\n            formed += 1\n        while l <= r and formed == required:\n            if r - l + 1 < ans[0]:\n                ans = (r - l + 1, l, r)\n            char = s[l]\n            window_counts[char] -= 1\n            if char in t_count and window_counts[char] < t_count[char]:\n                formed -= 1\n            l += 1\n        r += 1\n    return \"\" if ans[0] == float(\"inf\") else s[ans[1]:ans[2]+1]"
+  },
+  {
+    "instruction": "from typing import List\n\ndef find_median_sorted_arrays(nums1: List[int], nums2: List[int]) -> float:\n    \"\"\" Find and return the median of the two sorted arrays.\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef find_median_sorted_arrays(nums1: List[int], nums2: List[int]) -> float:\n    A, B = nums1, nums2\n    total = len(nums1) + len(nums2)\n    half = total // 2\n    if len(B) < len(A):\n        A, B = B, A\n    l, r = 0, len(A) - 1\n    while True:\n        i = (l + r) // 2\n        j = half - i - 2\n        Aleft = A[i] if i >= 0 else float(\"-inf\")\n        Aright = A[i+1] if (i+1) < len(A) else float(\"inf\")\n        Bleft = B[j] if j >= 0 else float(\"-inf\")\n        Bright = B[j+1] if (j+1) < len(B) else float(\"inf\")\n        if Aleft <= Bright and Bleft <= Aright:\n            if total % 2:\n                return min(Aright, Bright)\n            return (max(Aleft, Bleft) + min(Aright, Bright)) / 2\n        elif Aleft > Bright:\n            r = i - 1\n        else:\n            l = i + 1"
+  },
+  {
+    "instruction": "def base_calculator(s: str) -> int:\n    \"\"\" Implement a basic calculator to evaluate and return its value.\"\"\"",
+    "input": "",
+    "output": "def base_calculator(s: str) -> int:\n    stack = []\n    num = 0\n    sign = 1\n    result = 0\n    for c in s:\n        if c.isdigit():\n            num = num * 10 + int(c)\n        elif c in \"+\"\":\n            result += sign * num\n            num = 0\n            sign = 1 if c == \"+\" else -1\n        elif c == \"(\":\n            stack.append(result)\n            stack.append(sign)\n            result = 0\n            sign = 1\n        elif c == \")\":\n            result += sign * num\n            num = 0\n            result *= stack.pop()\n            result += stack.pop()\n    return result + sign * num"
+  },
+  {
+    "instruction": "from typing import List\n\ndef get_h_index(citations: List[int]) -> int:\n    \"\"\" Calculate and return the investigator's h-index.\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef get_h_index(citations: List[int]) -> int:\n    citations.sort(reverse=True)\n    h = 0\n    for i, c in enumerate(citations):\n        if c >= i+1:\n            h = i+1\n        else:\n            break\n    return h"
+  },
+  {
+    "instruction": "from typing import List\n\ndef product_except_self(nums: List[int]) -> List[int]:\n    \"\"\" Return the array answer, where answer[i] is equal to the product of all the elements in nums except nums[i].\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef product_except_self(nums: List[int]) -> List[int]:\n    n = len(nums)\n    left = [1] * n\n    right = [1] * n\n    for i in range(1, n):\n        left[i] = left[i-1] * nums[i-1]\n    for i in range(n-2, -1, -1):\n        right[i] = right[i+1] * nums[i+1]\n    return [left[i] * right[i] for i in range(n)]"
+  },
+  {
+    "instruction": "def integer_to_roman(num: int) -> str:\n    \"\"\" Given an integer, convert it to a Roman numeral.\"\"\"",
+    "input": "",
+    "output": "def integer_to_roman(num: int) -> str:\n    val = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]\n    sym = [\"M\", \"CM\", \"D\", \"CD\", \"C\", \"XC\", \"L\", \"XL\", \"X\", \"IX\", \"V\", \"IV\", \"I\"]\n    roman = \"\"\n    i = 0\n    while num > 0:\n        for _ in range(num // val[i]):\n            roman += sym[i]\n            num -= val[i]\n        i += 1\n    return roman"
+  },
+  {
+    "instruction": "def reverse_integer(x: int) -> int:\n    \"\"\" Return x with its digits reversed.\"\"\"",
+    "input": "",
+    "output": "def reverse_integer(x: int) -> int:\n    sign = 1 if x >= 0 else -1\n    x = abs(x)\n    rev = 0\n    while x:\n        rev = rev * 10 + x % 10\n        x //= 10\n    rev *= sign\n    return rev if -2**31 <= rev <= 2**31-1 else 0"
+  },
+  {
+    "instruction": "def divide_two_integers(dividend: int, divisor: int) -> int:\n    \"\"\" Divide two integers without using multiplication, division, and mod operator.\"\"\"",
+    "input": "",
+    "output": "def divide_two_integers(dividend: int, divisor: int) -> int:\n    if dividend == -2**31 and divisor == -1:\n        return 2**31 - 1\n    sign = -1 if (dividend < 0) ^ (divisor < 0) else 1\n    a, b = abs(dividend), abs(divisor)\n    res = 0\n    while a >= b:\n        temp, mul = b, 1\n        while a >= (temp << 1):\n            temp <<= 1\n            mul <<= 1\n        a -= temp\n        res += mul\n    return sign * res"
+  },
+  {
+    "instruction": "from typing import List\n\ndef nbit_gray_code_sequence(n: int) -> List[int]:\n    \"\"\" Return any valid n-bit gray code sequence.\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef nbit_gray_code_sequence(n: int) -> List[int]:\n    res = [0]\n    for i in range(n):\n        res += [x | (1 << i) for x in reversed(res)]\n    return res"
+  },
+  {
+    "instruction": "def multiply_strings(num1: str, num2: str) -> str:\n    \"\"\" Return the product of num1 and num2, also represented as a string.\"\"\"",
+    "input": "",
+    "output": "def multiply_strings(num1: str, num2: str) -> str:\n    if num1 == \"0\" or num2 == \"0\":\n        return \"0\"\n    m, n = len(num1), len(num2)\n    res = [0] * (m + n)\n    for i in range(m-1, -1, -1):\n        for j in range(n-1, -1, -1):\n            mul = int(num1[i]) * int(num2[j])\n            p1, p2 = i+j, i+j+1\n            total = mul + res[p2]\n            res[p2] = total % 10\n            res[p1] += total // 10\n    return ''.join(map(str, res)).lstrip('0') or '0'"
+  },
+  {
+    "instruction": "def pow_function_impl(x: float, n: int) -> float:\n    \"\"\" Implement pow(x, n), which calculates x raised to the power n.\"\"\"",
+    "input": "",
+    "output": "def pow_function_impl(x: float, n: int) -> float:\n    if n < 0:\n        x = 1 / x\n        n = -n\n    res = 1\n    while n:\n        if n & 1:\n            res *= x\n        x *= x\n        n >>= 1\n    return res"
+  },
+  {
+    "instruction": "def count_primes(n: int) -> int:\n    \"\"\" Return the number of prime numbers that are strictly less than n.\"\"\"",
+    "input": "",
+    "output": "def count_primes(n: int) -> int:\n    if n < 3:\n        return 0\n    is_prime = [True] * n\n    is_prime[0] = is_prime[1] = False\n    for i in range(2, int(n**0.5)+1):\n        if is_prime[i]:\n            for j in range(i*i, n, i):\n                is_prime[j] = False\n    return sum(is_prime)"
+  },
+  {
+    "instruction": "def find_nth_ugly_number(n: int) -> int:\n    \"\"\" Return the nth ugly number.\"\"\"",
+    "input": "",
+    "output": "def find_nth_ugly_number(n: int) -> int:\n    ugly = [1]\n    i2 = i3 = i5 = 0\n    for _ in range(1, n):\n        next2 = ugly[i2] * 2\n        next3 = ugly[i3] * 3\n        next5 = ugly[i5] * 5\n        next_ugly = min(next2, next3, next5)\n        ugly.append(next_ugly)\n        if next_ugly == next2:\n            i2 += 1\n        if next_ugly == next3:\n            i3 += 1\n        if next_ugly == next5:\n            i5 += 1\n    return ugly[-1]"
+  },
+  {
+    "instruction": "def integer_break(n: int) -> int:\n    \"\"\" Break it into the sum of k positive integers, and maximize the product.\"\"\"",
+    "input": "",
+    "output": "def integer_break(n: int) -> int:\n    if n <= 3:\n        return n - 1\n    dp = [0] * (n+1)\n    dp[2] = 1\n    for i in range(3, n+1):\n        dp[i] = max(2*(i-2), 2*dp[i-2], 3*(i-3), 3*dp[i-3])\n    return dp[n]"
+  },
+  {
+    "instruction": "def zigzag_conversion(s: str, numRows: int) -> str:\n    \"\"\" Write the code that will take a string and make zigzag conversion given a number of rows.\"\"\"",
+    "input": "",
+    "output": "def zigzag_conversion(s: str, numRows: int) -> str:\n    if numRows == 1:\n        return s\n    rows = [''] * numRows\n    cur_row, down = 0, False\n    for c in s:\n        rows[cur_row] += c\n        if cur_row == 0 or cur_row == numRows - 1:\n            down = not down\n        cur_row += 1 if down else -1\n    return ''.join(rows)"
+  },
+  {
+    "instruction": "from typing import List\n\ndef generate_parentheses(n: int) -> List[str]:\n    \"\"\" Write a function to generate all combinations of well-formed parentheses.\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef generate_parentheses(n: int) -> List[str]:\n    res = []\n    def backtrack(s, left, right):\n        if len(s) == 2*n:\n            res.append(s)\n            return\n        if left < n:\n            backtrack(s+'(', left+1, right)\n        if right < left:\n            backtrack(s+')', left, right+1)\n    backtrack('', 0, 0)\n    return res"
+  },
+  {
+    "instruction": "from typing import List\n\ndef next_permutation(nums: List[int]) -> List[int]:\n    \"\"\" Find the next permutation of nums.\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef next_permutation(nums: List[int]) -> List[int]:\n    i = len(nums) - 2\n    while i >= 0 and nums[i] >= nums[i+1]:\n        i -= 1\n    if i >= 0:\n        j = len(nums) - 1\n        while j >= 0 and nums[j] <= nums[i]:\n            j -= 1\n        nums[i], nums[j] = nums[j], nums[i]\n    left, right = i+1, len(nums)-1\n    while left < right:\n        nums[left], nums[right] = nums[right], nums[left]\n        left += 1\n        right -= 1\n    return nums"
+  },
+  {
+    "instruction": "def get_edit_distance(word1: str, word2: str) -> int:\n    \"\"\" Return the minimum number of operations required to convert word1 to word2.\"\"\"",
+    "input": "",
+    "output": "def get_edit_distance(word1: str, word2: str) -> int:\n    m, n = len(word1), len(word2)\n    dp = [[0]*(n+1) for _ in range(m+1)]\n    for i in range(m+1):\n        dp[i][0] = i\n    for j in range(n+1):\n        dp[0][j] = j\n    for i in range(1, m+1):\n        for j in range(1, n+1):\n            if word1[i-1] == word2[j-1]:\n                dp[i][j] = dp[i-1][j-1]\n            else:\n                dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1])\n    return dp[m][n]"
+  },
+  {
+    "instruction": "from typing import List\n\ndef maximum_subarray(nums: List[int]) -> int:\n    \"\"\" Find the subarray with the largest sum, and return its sum.\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef maximum_subarray(nums: List[int]) -> int:\n    max_current = max_global = nums[0]\n    for i in range(1, len(nums)):\n        max_current = max(nums[i], max_current + nums[i])\n        if max_current > max_global:\n            max_global = max_current\n    return max_global"
+  },
+  {
+    "instruction": "from typing import List\n\ndef parse_music(music_string: str) -> List[int]:\n    \"\"\" Parse musical notes string and return list of beats.\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef parse_music(music_string: str) -> List[int]:\n    mapping = {'o': 4, 'o|': 2, '.|': 1}\n    return [mapping[note] for note in music_string.split()]"
+  },
+  {
+    "instruction": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    \"\"\" Return list of prime factors of given integer.\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef factorize(n: int) -> List[int]:\n    factors = []\n    d = 2\n    while d * d <= n:\n        while n % d == 0:\n            factors.append(d)\n            n //= d\n        d += 1\n    if n > 1:\n        factors.append(n)\n    return factors"
+  },
+  {
+    "instruction": "def decode_cyclic(s: str):\n    \"\"\" takes as input string encoded with encode_cyclic function. Returns decoded string.\"\"\"",
+    "input": "",
+    "output": "def decode_cyclic(s: str):\n    groups = [s[(3*i):min((3*i+3), len(s))] for i in range((len(s)+2)//3)]\n    groups = [(group[-1] + group[:-1]) if len(group) == 3 else group for group in groups]\n    return \"\".join(groups)"
+  },
+  {
+    "instruction": "def triangle_area(a, b, c):\n    \"\"\" Return the area of the triangle rounded to 2 decimal points if valid triangle.\"\"\"",
+    "input": "",
+    "output": "def triangle_area(a, b, c):\n    if a+b<=c or a+c<=b or b+c<=a:\n        return -1\n    s = (a+b+c)/2\n    area = (s*(s-a)*(s-b)*(s-c))**0.5\n    return round(area, 2)"
+  },
+  {
+    "instruction": "def string_sequence(n: int) -> str:\n    \"\"\" Return a string containing space-delimited numbers starting from 0 upto n inclusive.\"\"\"",
+    "input": "",
+    "output": "def string_sequence(n: int) -> str:\n    return ' '.join(str(i) for i in range(n+1))"
+  },
+  {
+    "instruction": "from typing import List\n\ndef has_greater_elements(numbers: List[float], threshold: float) -> bool:\n    \"\"\" Checks for any two numbers greater than the given threshold.\"\"\"",
+    "input": "",
+    "output": "from typing import List\n\ndef has_greater_elements(numbers: List[float], threshold: float) -> bool:\n    count = 0\n    for num in numbers:\n        if num > threshold:\n            count += 1\n            if count >= 2:\n                return True\n    return False"
+  },
+  {
+    "instruction": "from typing import List, Optional\n\ndef shortest(strings: List[str]) -> Optional[str]:\n    \"\"\" Return the shortest string.\"\"\"",
+    "input": "",
+    "output": "from typing import List, Optional\n\ndef shortest(strings: List[str]) -> Optional[str]:\n    if not strings:\n        return None\n    min_len = float('inf')\n    result = ''\n    for s in strings:\n        if len(s) < min_len:\n            min_len = len(s)\n            result = s\n    return result"
+  },
+  {
+    "instruction": "from typing import List, Tuple\n\ndef mean_product(numbers: List[int]) -> Tuple[int, int]:\n    \"\"\" Return a tuple consisting of a mean-value and a product of all integers.\"\"\"",
+    "input": "",
+    "output": "from typing import List, Tuple\n\ndef mean_product(numbers: List[int]) -> Tuple[int, int]:\n    if not numbers:\n        return (0, 1)\n    total = sum(numbers)\n    product = 1\n    for num in numbers:\n        product *= num\n    mean = total // len(numbers)\n    return (mean, product)"
+  },
+  {
+    "instruction": "def sort_numbers_descending(numbers: str) -> str:\n    \"\"\" Return the string with numbers sorted from largest to smallest.\"\"\"",
+    "input": "",
+    "output": "def sort_numbers_descending(numbers: str) -> str:\n    num_map = {'zero':0, 'one':1, 'two':2, 'three':3, 'four':4, 'five':5, 'six':6, 'seven':7, 'eight':8, 'nine':9}\n    words = numbers.split()\n    words.sort(key=lambda x: num_map[x], reverse=True)\n    return ' '.join(words)"
+  },
+  {
+    "instruction": "def accumulate_to_n(n: int):\n    \"\"\"accumulate_to_n is a function that products numbers from 1 to n.\"\"\"",
+    "input": "",
+    "output": "def accumulate_to_n(n: int):\n    if n < 1 or n > 20:\n        return -1\n    result = 1\n    for i in range(1, n+1):\n        result *= i\n    return result"
+  }
+]

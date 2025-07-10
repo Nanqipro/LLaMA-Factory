@@ -184,7 +184,7 @@ from vllm import LLM, SamplingParams
 import os
 
 class Infer:
-    def __init__(self, model="./saves/qwen2.5-3b-generated-x-r1-merged"):
+    def __init__(self, model="./LLM-models-datasets/Qwen2.5-3B"):
         if not os.path.exists(model):
             print(f"Error: Model path '{model}' does not exist.")
             exit(1)
@@ -196,10 +196,10 @@ class Infer:
     # max_model_len=8192  # 增加此行以限制最大序列长度，减少显存占用
 )
         self.sampling_params = {
-            "choice": SamplingParams(max_tokens=1024, temperature=0.8, top_p=0.95),
-            "code-generate": SamplingParams(n=3, max_tokens=2048, temperature=0.8, top_p=0.95),
-            "generic-generate": SamplingParams(max_tokens=128, temperature=0.8, top_p=0.95),
-            "math": SamplingParams(max_tokens=512, temperature=0.8, top_p=0.95)
+            "choice": SamplingParams(max_tokens=4096, temperature=0.8, top_p=0.95),
+            "code-generate": SamplingParams(n=3, max_tokens=4096, temperature=0.8, top_p=0.95),
+            "generic-generate": SamplingParams(max_tokens=4096, temperature=0.8, top_p=0.95),
+            "math": SamplingParams(max_tokens=4096, temperature=0.8, top_p=0.95)
         }
         
         # 修复数学模板中的大括号转义问题
@@ -288,10 +288,10 @@ class Infer:
 
 if __name__ == "__main__":
     data_file_name = "./A-data/A-data.jsonl"
-    infer = Infer(model="./saves/qwen2.5-3b-generated-x-r1-merged")
+    infer = Infer(model="./LLM-models-datasets/Qwen2.5-3B")
     res = infer.infer(data_file=data_file_name)
     
-    output_file_name = "./A-data/res-generated-x-r1-merged.json"
+    output_file_name = "./A-data/res.json"
     with open(output_file_name, "w", encoding="utf-8") as f:
         json.dump(res, f, ensure_ascii=False, indent=2)
 

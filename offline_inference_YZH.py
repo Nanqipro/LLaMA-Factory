@@ -291,7 +291,7 @@ if __name__ == "__main__":
     infer = Infer(model="./saves/qwen2.5-3b-generated-x-r1-merged")
     res = infer.infer(data_file=data_file_name)
     
-    output_file_name = "res-generated-x-r1-merged.json"
+    output_file_name = "./A-data/res-generated-x-r1-merged.json"
     with open(output_file_name, "w", encoding="utf-8") as f:
         json.dump(res, f, ensure_ascii=False, indent=2)
 

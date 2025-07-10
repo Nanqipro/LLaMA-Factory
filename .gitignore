@@ -176,5 +176,7 @@ output/
 wandb/
 swanlog/
 logs/
+saves/
+LLM-models-datasets/
 generated_predictions.jsonl
 predictions_score.json

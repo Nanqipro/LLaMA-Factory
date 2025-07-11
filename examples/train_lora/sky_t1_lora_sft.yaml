@@ -1,5 +1,5 @@
 ### model
-model_name_or_path: ./LLM-models-datasets/X-R1-3B/xiaodongguaAIGC/X-R1-3B  # 更新为X-R1-3B模型的实际路径
+model_name_or_path: ./LLM-models-datasets/Qwen2.5-3B  # 使用指定的Qwen2.5-3B模型
 trust_remote_code: true
 
 ### method
@@ -19,8 +19,8 @@ preprocessing_num_workers: 16
 dataloader_num_workers: 4
 
 ### output
-output_dir: saves/x-r1-3b-sky-t1/lora/sft  # 更新输出目录以反映新模型
-logging_dir: logs/x-r1-3b-sky-t1/lora/sft  # 更新日志输出目录以反映新模型
+output_dir: saves/qwen2.5-3b-sky-t1/lora/sft  # 更新输出目录以反映Qwen2.5-3B模型
+logging_dir: logs/qwen2.5-3b-sky-t1/lora/sft  # 更新日志输出目录以反映Qwen2.5-3B模型
 logging_steps: 10
 save_steps: 100
 plot_loss: true

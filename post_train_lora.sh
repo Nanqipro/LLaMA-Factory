@@ -14,9 +14,9 @@
 
 # --- 配置参数 ---
 # 请根据您的环境修改以下路径
-BASE_MODEL_PATH="./LLM-models-datasets/Qwen2.5-3B"
-ADAPTER_PATH="saves/qwen2.5-3b-generated-x-r1/lora/sft"
-MERGED_MODEL_PATH="saves/qwen2.5-3b-generated-x-r1-merged"
+BASE_MODEL_PATH="./LLM-models-datasets/X-R1-3B/xiaodongguaAIGC/X-R1-3B"
+ADAPTER_PATH="saves/x-r1-3b-sky-t1/lora/sft"
+MERGED_MODEL_PATH="saves/x-r1-3b-sky-t1-merged"
 TEMPLATE="qwen"
 # 模型导出分片大小(GB)，根据需要调整
 EXPORT_SIZE=4

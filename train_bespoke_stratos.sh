@@ -6,7 +6,7 @@
 echo "开始 Sky-T1 Data 17k 思维链推理数据集的 LoRA 微调..."
 
 # 设置日志目录和文件
-LOG_DIR="logs/x-r1-3b-sky-t1/lora/sft"
+LOG_DIR="logs/qwen2.5-3b-sky-t1/lora/sft"
 LOG_FILE="${LOG_DIR}/training_$(date +%Y%m%d_%H%M%S).log"
 ERROR_LOG="${LOG_DIR}/error_$(date +%Y%m%d_%H%M%S).log"
 
@@ -14,7 +14,7 @@ ERROR_LOG="${LOG_DIR}/error_$(date +%Y%m%d_%H%M%S).log"
 mkdir -p "$LOG_DIR"
 
 # 设置环境变量
-export CUDA_VISIBLE_DEVICES=2,3  # 指定GPU，多卡可设置为 0,1,2,3
+export CUDA_VISIBLE_DEVICES=0,1,2,3  # 指定GPU，多卡可设置为 0,1,2,3
 export WANDB_DISABLED=true     # 禁用wandb日志
 
 echo "日志将保存到: $LOG_FILE"
@@ -57,14 +57,14 @@ fi
     
     if [ $TRAIN_EXIT_CODE -eq 0 ]; then
         echo "✅ 训练成功完成！"
-        echo "📁 模型保存在: saves/x-r1-3b-sky-t1/lora/sft/"
+        echo "📁 模型保存在: saves/qwen2.5-3b-sky-t1/lora/sft/"
         echo "📊 训练日志保存在: $LOG_FILE"
-        echo "📈 TensorBoard日志保存在: logs/x-r1-3b-sky-t1/lora/sft/"
+        echo "📈 TensorBoard日志保存在: logs/qwen2.5-3b-sky-t1/lora/sft/"
         
         # 输出最终的模型信息
-        if [ -d "saves/x-r1-3b-sky-t1/lora/sft" ]; then
+        if [ -d "saves/qwen2.5-3b-sky-t1/lora/sft" ]; then
             echo "🗂️  输出文件列表:"
-            ls -la saves/x-r1-3b-sky-t1/lora/sft/
+            ls -la saves/qwen2.5-3b-sky-t1/lora/sft/
         fi
     else
         echo "❌ 训练失败，退出代码: $TRAIN_EXIT_CODE"

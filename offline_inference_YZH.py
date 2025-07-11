@@ -184,7 +184,7 @@ from vllm import LLM, SamplingParams
 import os
 
 class Infer:
-    def __init__(self, model="./LLM-models-datasets/Qwen2.5-3B"):
+    def __init__(self, model="./LLM-models-datasets/qwen2.5-3b-bespoke-stratos-merged500"):
         if not os.path.exists(model):
             print(f"Error: Model path '{model}' does not exist.")
             exit(1)
@@ -288,10 +288,10 @@ class Infer:
 
 if __name__ == "__main__":
     data_file_name = "./A-data/A-data.jsonl"
-    infer = Infer(model="./LLM-models-datasets/Qwen2.5-3B")
+    infer = Infer(model="./LLM-models-datasets/qwen2.5-3b-bespoke-stratos-merged500")
     res = infer.infer(data_file=data_file_name)
     
-    output_file_name = "./A-data/res.json"
+    output_file_name = "./A-data/res-qwen2.5-3b-bespoke-stratos-merged500.json"
     with open(output_file_name, "w", encoding="utf-8") as f:
         json.dump(res, f, ensure_ascii=False, indent=2)
 

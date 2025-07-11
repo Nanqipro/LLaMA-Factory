@@ -183,6 +183,20 @@
       "assistant_tag": "assistant"
     }
   },
+  "sky_t1_data_17k": {
+    "file_name": "../LLM-models-datasets/Sky-T1_data_17k_default/NovaSky-AI___sky-t1_data_17k/default-a3f903710ddeb1b7/0.0.0/master/sky-t1_data_17k-train.arrow",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "conversations",
+      "system": "system"
+    },
+    "tags": {
+      "role_tag": "from",
+      "content_tag": "value",
+      "user_tag": "user",
+      "assistant_tag": "assistant"
+    }
+  },
   "codealpaca": {
     "hf_hub_url": "sahil2801/CodeAlpaca-20k",
     "ms_hub_url": "AI-ModelScope/CodeAlpaca-20k"

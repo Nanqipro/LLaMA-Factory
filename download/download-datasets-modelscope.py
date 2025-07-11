@@ -1,64 +1,168 @@
-from modelscope import snapshot_download
 import os
+import asyncio
 from typing import Optional
+from modelscope.msdatasets import MsDataset
+from modelscope.utils.constant import DownloadMode
+import logging
 
-def download_model_from_modelscope(model_name: str, local_dir: str) -> bool:
+# 配置日志
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+
+class DatasetDownloader:
     """
-    从魔塔社区下载模型
+    ModelScope数据集下载器
     
-    Parameters
-    ----------
-    model_name : str
-        模型名称，格式为 "组织名/模型名"
-    local_dir : str
-        本地存储目录路径
+    提供从ModelScope平台下载各种类型数据集的功能
+    """
+    
+    def __init__(self, base_dir: str = "../LLM-models-datasets") -> None:
+        """
+        初始化数据集下载器
         
-    Returns
-    -------
-    bool
-        下载是否成功
-    """
-    try:
-        print(f"从魔塔社区下载模型 {model_name} 到 {local_dir}...")
-        # ModelScope的snapshot_download使用不同的参数
-        snapshot_download(
-            model_id=model_name,
-            cache_dir=local_dir,
-            # revision='master'  # 可选：指定版本
-        )
-        print(f"模型下载成功到 {local_dir}")
-        return True
-    except Exception as e:
-        print(f"下载模型时出错: {e}")
-        return False
+        Parameters
+        ----------
+        base_dir : str
+            数据集存储的基础目录路径
+        """
+        self.base_dir = base_dir
+        self._ensure_base_dir_exists()
+        
+    def _ensure_base_dir_exists(self) -> None:
+        """
+        确保基础目录存在，不存在则创建
+        """
+        if not os.path.exists(self.base_dir):
+            os.makedirs(self.base_dir, exist_ok=True)
+            logger.info(f"创建基础目录: {self.base_dir}")
+    
+    async def download_dataset_async(
+        self, 
+        dataset_name: str, 
+        subset_name: Optional[str] = None,
+        split: str = "train",
+        download_mode: str = "force_redownload"
+    ) -> bool:
+        """
+        异步下载指定数据集
+        
+        Parameters
+        ----------
+        dataset_name : str
+            数据集名称，格式为 "组织名/数据集名"
+        subset_name : Optional[str]
+            子数据集名称（可选）
+        split : str
+            数据集分割类型，默认为 "train"
+        download_mode : str
+            下载模式，默认为 "force_redownload"
+            
+        Returns
+        -------
+        bool
+            下载是否成功
+        """
+        try:
+            logger.info(f"开始异步下载数据集: {dataset_name}")
+            
+            # 构建本地存储路径
+            dataset_local_name = dataset_name.split('/')[-1]
+            if subset_name:
+                dataset_local_name += f"_{subset_name}"
+            
+            local_path = os.path.join(self.base_dir, dataset_local_name)
+            
+            # 使用ModelScope数据集API下载到指定目录
+            dataset = MsDataset.load(
+                dataset_name=dataset_name,
+                subset_name=subset_name,
+                split=split,
+                download_mode=getattr(DownloadMode, download_mode.upper(), DownloadMode.FORCE_REDOWNLOAD),
+                cache_dir=local_path  # 指定缓存目录为我们的目标路径
+            )
+            
+            logger.info(f"数据集已下载到: {local_path}")
+            logger.info(f"✅ 数据集 {dataset_name} 下载成功")
+            return True
+            
+        except Exception as e:
+            logger.error(f"❌ 下载数据集 {dataset_name} 时出错: {e}")
+            return False
+    
+    def download_dataset_sync(
+        self, 
+        dataset_name: str, 
+        subset_name: Optional[str] = None,
+        split: str = "train"
+    ) -> bool:
+        """
+        同步下载指定数据集
+        
+        Parameters
+        ----------
+        dataset_name : str
+            数据集名称，格式为 "组织名/数据集名"
+        subset_name : Optional[str]
+            子数据集名称（可选）
+        split : str
+            数据集分割类型，默认为 "train"
+            
+        Returns
+        -------
+        bool
+            下载是否成功
+        """
+        try:
+            logger.info(f"开始同步下载数据集: {dataset_name}")
+            
+            # 构建本地存储路径
+            dataset_local_name = dataset_name.split('/')[-1]
+            if subset_name:
+                dataset_local_name += f"_{subset_name}"
+            
+            local_path = os.path.join(self.base_dir, dataset_local_name)
+            
+            # 使用ModelScope数据集API下载到指定目录
+            dataset = MsDataset.load(
+                dataset_name=dataset_name,
+                subset_name=subset_name,
+                split=split,
+                cache_dir=local_path  # 指定缓存目录为我们的目标路径
+            )
+            
+            logger.info(f"数据集已下载到: {local_path}")
+            logger.info(f"✅ 数据集 {dataset_name} 下载成功")
+            return True
+            
+        except Exception as e:
+            logger.error(f"❌ 下载数据集 {dataset_name} 时出错: {e}")
+            return False
 
-def main() -> None:
+
+async def main() -> None:
     """
-    主函数：执行模型下载流程
+    主函数：演示数据集下载功能
     """
-    # 魔塔社区上的模型名称（对应Qwen2.5-3B-Instruct）
-    model_name = "Qwen/Qwen2.5-0.5B"
-    # 备选模型：model_name = "AI-ModelScope/gpt-neo-1.3B"
+    # 初始化下载器
+    downloader = DatasetDownloader()
     
-    # 定义本地存储路径
-    base_dir = "../LLM-models-datasets"
-    local_model_dir = os.path.join(base_dir, model_name.split('/')[-1])
+    logger.info("=== ModelScope 数据集下载工具 ===")
     
-    # 确保基础目录存在
-    if not os.path.exists(base_dir):
-        os.makedirs(base_dir)
-        print(f"创建目录: {base_dir}")
-    
-    # 执行下载
-    success = download_model_from_modelscope(
-        model_name=model_name,
-        local_dir=local_model_dir
+    # 单个数据集同步下载示例
+    logger.info("\n单个数据集下载示例:")
+    success = downloader.download_dataset_sync(
+        dataset_name="NovaSky-AI/Sky-T1_data_17k",
+        subset_name="default",  # 显式指定要下载的子集
+        split="train"  # 使用实际存在的分割
     )
     
     if success:
-        print("✅ 模型下载完成！")
+        logger.info("✅ 数据集下载完成")
     else:
-        print("❌ 模型下载失败，请检查网络连接和模型名称")
+        logger.error("❌ 数据集下载失败")
+
 
 if __name__ == "__main__":
-    main()
+    # 运行异步主函数
+    asyncio.run(main())

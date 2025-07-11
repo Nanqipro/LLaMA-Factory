@@ -1,107 +1,256 @@
-from datasets import load_dataset, DatasetDict, Dataset, IterableDatasetDict, IterableDataset
 import os
-from typing import Optional
+import asyncio
+from typing import Optional, Dict, Any
+from datasets import load_dataset, DownloadMode
+import logging
 
-def download_dataset_from_huggingface(dataset_name: str, local_dir: str, split: Optional[str] = None) -> bool:
+# 配置日志
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logger = logging.getLogger(__name__)
+
+
+class DatasetDownloader:
     """
-    从 Hugging Face 下载数据集
-
-    Parameters
-    ----------
-    dataset_name : str
-        数据集名称，格式为 "组织名/数据集名" 或 "数据集名"
-    local_dir : str
-        本地存储目录路径
-    split : Optional[str], default=None
-        数据集分割，如 'train', 'test', 'validation'，None表示下载所有分割
-
-    Returns
-    -------
-    bool
-        下载是否成功
+    Hugging Face数据集下载器
+    
+    提供从Hugging Face平台下载各种类型数据集的功能
     """
-    try:
-        print(f"从 Hugging Face 下载数据集 {dataset_name} 到 {local_dir}...")
+    
+    def __init__(self, base_dir: str = "../LLM-models-datasets") -> None:
+        """
+        初始化数据集下载器
         
-        # 确保本地目录存在
-        if not os.path.exists(local_dir):
-            os.makedirs(local_dir)
-            print(f"创建目录: {local_dir}")
-
-        # 使用 Hugging Face datasets 库下载数据集
-        # 通过 streaming=True 来判断是否只能流式加载
+        Parameters
+        ----------
+        base_dir : str
+            数据集存储的基础目录路径
+        """
+        self.base_dir = base_dir
+        self._ensure_base_dir_exists()
+        
+    def _ensure_base_dir_exists(self) -> None:
+        """
+        确保基础目录存在，不存在则创建
+        """
+        if not os.path.exists(self.base_dir):
+            os.makedirs(self.base_dir, exist_ok=True)
+            logger.info(f"创建基础目录: {self.base_dir}")
+    
+    async def download_dataset_async(
+        self, 
+        dataset_name: str, 
+        config_name: Optional[str] = None,
+        split: Optional[str] = None,
+        download_mode: str = "force_redownload",
+        use_auth_token: Optional[str] = None
+    ) -> bool:
+        """
+        异步下载指定数据集
+        
+        Parameters
+        ----------
+        dataset_name : str
+            数据集名称，格式为 "组织名/数据集名" 或 "数据集名"
+        config_name : Optional[str]
+            配置名称（子数据集）（可选）
+        split : Optional[str]
+            数据集分割类型，如 "train", "test", "validation" 等
+        download_mode : str
+            下载模式，默认为 "force_redownload"
+        use_auth_token : Optional[str]
+            认证令牌，用于访问私有数据集
+            
+        Returns
+        -------
+        bool
+            下载是否成功
+        """
         try:
-            dataset = load_dataset(dataset_name, cache_dir=local_dir, split=split)
-        except Exception:
-            print("标准加载失败，尝试流式加载...")
-            dataset = load_dataset(dataset_name, cache_dir=local_dir, split=split, streaming=True)
+            logger.info(f"开始异步下载数据集: {dataset_name}")
+            
+            # 构建本地存储路径
+            dataset_local_name = dataset_name.replace('/', '_')
+            if config_name:
+                dataset_local_name += f"_{config_name}"
+            
+            local_path = os.path.join(self.base_dir, dataset_local_name)
+            
+            # 从环境变量获取认证令牌（如果未提供）
+            if use_auth_token is None:
+                use_auth_token = os.getenv('HF_TOKEN')
+            
+            # 确定下载模式
+            if download_mode == "force_redownload":
+                dl_mode = DownloadMode.FORCE_REDOWNLOAD
+            elif download_mode == "reuse_cache_if_exists":
+                dl_mode = DownloadMode.REUSE_CACHE_IF_EXISTS
+            else:
+                dl_mode = DownloadMode.REUSE_DATASET_IF_EXISTS
+            
+            # 使用Hugging Face数据集API下载到指定目录
+            dataset = load_dataset(
+                dataset_name,
+                name=config_name,
+                split=split,
+                cache_dir=local_path,
+                download_mode=dl_mode,
+                token=use_auth_token
+            )
+            
+            logger.info(f"数据集已下载到: {local_path}")
+            try:
+                # 尝试获取数据集大小，使用 type: ignore 来避免类型检查错误
+                size = len(dataset)  # type: ignore
+                logger.info(f"数据集大小: {size} 条记录")
+            except (TypeError, AttributeError):
+                logger.info("数据集为可迭代类型，无法直接获取大小")
+            logger.info(f"✅ 数据集 {dataset_name} 下载成功")
+            return True
+            
+        except Exception as e:
+            logger.error(f"❌ 下载数据集 {dataset_name} 时出错: {e}")
+            return False
+    
+    def download_dataset_sync(
+        self, 
+        dataset_name: str, 
+        config_name: Optional[str] = None,
+        split: Optional[str] = None,
+        use_auth_token: Optional[str] = None
+    ) -> bool:
+        """
+        同步下载指定数据集
+        
+        Parameters
+        ----------
+        dataset_name : str
+            数据集名称，格式为 "组织名/数据集名" 或 "数据集名"
+        config_name : Optional[str]
+            配置名称（子数据集）（可选）
+        split : Optional[str]
+            数据集分割类型，如 "train", "test", "validation" 等
+        use_auth_token : Optional[str]
+            认证令牌，用于访问私有数据集
+            
+        Returns
+        -------
+        bool
+            下载是否成功
+        """
+        try:
+            logger.info(f"开始同步下载数据集: {dataset_name}")
+            
+            # 构建本地存储路径
+            dataset_local_name = dataset_name.replace('/', '_')
+            if config_name:
+                dataset_local_name += f"_{config_name}"
+            
+            local_path = os.path.join(self.base_dir, dataset_local_name)
+            
+            # 从环境变量获取认证令牌（如果未提供）
+            if use_auth_token is None:
+                use_auth_token = os.getenv('HF_TOKEN')
+            
+            # 使用Hugging Face数据集API下载到指定目录
+            dataset = load_dataset(
+                dataset_name,
+                name=config_name,
+                split=split,
+                cache_dir=local_path,
+                token=use_auth_token
+            )
+            
+            logger.info(f"数据集已下载到: {local_path}")
+            try:
+                # 尝试获取数据集大小，使用 type: ignore 来避免类型检查错误
+                size = len(dataset)  # type: ignore
+                logger.info(f"数据集大小: {size} 条记录")
+            except (TypeError, AttributeError):
+                logger.info("数据集为可迭代类型，无法直接获取大小")
+            logger.info(f"✅ 数据集 {dataset_name} 下载成功")
+            return True
+            
+        except Exception as e:
+            logger.error(f"❌ 下载数据集 {dataset_name} 时出错: {e}")
+            return False
+    
+    async def download_multiple_datasets_async(
+        self, 
+        dataset_configs: list[Dict[str, Any]]
+    ) -> Dict[str, bool]:
+        """
+        异步批量下载多个数据集
+        
+        Parameters
+        ----------
+        dataset_configs : list[Dict[str, Any]]
+            数据集配置列表，每个配置包含数据集下载参数
+            
+        Returns
+        -------
+        Dict[str, bool]
+            每个数据集的下载结果
+        """
+        results = {}
+        tasks = []
+        
+        for config in dataset_configs:
+            dataset_name = config.get('dataset_name')
+            if dataset_name:
+                task = self.download_dataset_async(**config)
+                tasks.append((dataset_name, task))
+        
+        # 并发执行所有下载任务
+        for dataset_name, task in tasks:
+            try:
+                result = await task
+                results[dataset_name] = result
+            except Exception as e:
+                logger.error(f"批量下载中出错 {dataset_name}: {e}")
+                results[dataset_name] = False
+        
+        return results
 
-        # 处理 DatasetDict 和 IterableDatasetDict (当 split is None)
-        if isinstance(dataset, (DatasetDict, IterableDatasetDict)):
-            for split_name, ds in dataset.items():
-                if isinstance(ds, Dataset):
-                    save_path = os.path.join(local_dir, f"{dataset_name.replace('/', '_')}_{split_name}")
-                    ds.save_to_disk(save_path)
-                    print(f"数据集分割 '{split_name}' 已保存到 {save_path}")
-                elif isinstance(ds, IterableDataset):
-                    print(f"检测到流式数据集分割 '{split_name}'，将保存为 JSONL 文件。")
-                    json_save_path = os.path.join(local_dir, f"{dataset_name.replace('/', '_')}_{split_name}.jsonl")
-                    # 流式写入json
-                    with open(json_save_path, "w", encoding="utf-8") as f:
-                        for item in ds:
-                            f.write(str(item) + "\n")
-                    print(f"流式数据集分割 '{split_name}' 已保存到 {json_save_path}")
 
-        # 处理单个 Dataset 和 IterableDataset
-        elif isinstance(dataset, Dataset):
-            save_path = os.path.join(local_dir, dataset_name.replace('/', '_'))
-            dataset.save_to_disk(save_path)
-            print(f"数据集下载成功到 {save_path}")
-        elif isinstance(dataset, IterableDataset):
-            print("检测到流式数据集，将保存为 JSONL 文件。")
-            json_save_path = os.path.join(local_dir, f"{dataset_name.replace('/', '_')}.jsonl")
-            # 流式写入json
-            with open(json_save_path, "w", encoding="utf-8") as f:
-                for item in dataset:
-                    f.write(str(item) + "\n")
-            print(f"流式数据集已保存到 {json_save_path}")
-
-        return True
-
-    except Exception as e:
-        print(f"下载数据集时出错: {e}")
-        return False
-
-def main() -> None:
+async def main() -> None:
     """
-    主函数：执行数据集下载流程
+    主函数：演示数据集下载功能
     """
-    # Hugging Face 上的数据集名称示例
-    dataset_name = "squad"  # Stanford Question Answering Dataset
-    # 备选数据集：dataset_name = "glue", "imdb", "wikitext"
+    # 初始化下载器
+    downloader = DatasetDownloader()
     
-    # 定义本地存储路径
-    base_dir = "../LLM-models-datasets"
-    dataset_root_dir = os.path.join(base_dir, "datasets")
-    local_dataset_dir = os.path.join(dataset_root_dir, dataset_name.replace('/', '_'))
+    logger.info("=== Hugging Face 数据集下载工具 ===")
     
-    # 确保基础目录存在
-    if not os.path.exists(dataset_root_dir):
-        os.makedirs(dataset_root_dir)
-        print(f"创建目录: {dataset_root_dir}")
-    
-    # 执行下载 - 可以指定特定分割或下载全部
-    success = download_dataset_from_huggingface(
-        dataset_name=dataset_name,
-        local_dir=local_dataset_dir,
-        split=None  # None表示下载所有分割，也可以指定 'train', 'test' 等
+    # 单个数据集同步下载示例
+    logger.info("\n单个数据集下载示例:")
+    success = downloader.download_dataset_sync(
+        dataset_name="simplescaling/s1K",
+        split="train"
     )
     
     if success:
-        print("✅ 数据集下载完成！")
-        print(f"数据集位置: {local_dataset_dir}")
+        logger.info("✅ 数据集下载完成")
     else:
-        print("❌ 数据集下载失败，请检查网络连接和数据集名称")
+        logger.error("❌ 数据集下载失败")
+    
+    # # 异步批量下载示例
+    # logger.info("\n批量异步下载示例:")
+    # dataset_configs = [
+    #     {
+    #         "dataset_name": "glue",
+    #         "config_name": "cola",
+    #         "split": "train"
+    #     }
+    # ]
+    
+    # results = await downloader.download_multiple_datasets_async(dataset_configs)
+    
+    # logger.info("\n批量下载结果:")
+    # for dataset_name, success in results.items():
+    #     status = "✅ 成功" if success else "❌ 失败"
+    #     logger.info(f"{dataset_name}: {status}")
+
 
 if __name__ == "__main__":
-    main()
+    # 运行异步主函数
+    asyncio.run(main())

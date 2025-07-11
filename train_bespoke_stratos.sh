@@ -14,7 +14,7 @@ ERROR_LOG="${LOG_DIR}/error_$(date +%Y%m%d_%H%M%S).log"
 mkdir -p "$LOG_DIR"
 
 # 设置环境变量
-export CUDA_VISIBLE_DEVICES=0,1,2,3  # 指定GPU，多卡可设置为 0,1,2,3
+export CUDA_VISIBLE_DEVICES=0,1  # 指定GPU，多卡可设置为 0,1,2,3
 export WANDB_DISABLED=true     # 禁用wandb日志
 
 echo "日志将保存到: $LOG_FILE"

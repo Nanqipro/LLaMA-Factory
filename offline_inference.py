@@ -3,7 +3,7 @@ from vllm import LLM, SamplingParams
 import os
 
 class Infer:
-    def __init__(self, model="./saves/qwen2.5-3b-generated-x-r1-merged"):
+    def __init__(self, model="./LLM-models-datasets/Qwen2.5-3B"):
         if not os.path.exists(model):
             print(f"Error: Model path '{model}' does not exist.")
             exit(1)
@@ -11,7 +11,8 @@ class Infer:
         self.llm = LLM(
     model=model,
     trust_remote_code=True,
-    tokenizer_mode="slow"  # 添加这行
+    tokenizer_mode="slow",  # 添加这行
+    # max_model_len=8192  # 增加此行以限制最大序列长度，减少显存占用
 )
         self.sampling_params = {
             "choice": SamplingParams(max_tokens=4096, temperature=0.8, top_p=0.95),
@@ -25,7 +26,7 @@ class Infer:
             "choice": "Answer the following multiple choice question. The last line of your response should be of the following format: 'Answer: $LETTER' (without quotes) where LETTER is one of ABCD. Think step by step before answering.\n\n{Question}\n\nA) {A}\nB) {B}\nC) {C}\nD) {D}",
             "code-generate": "Read the following function signature and docstring, and fully implement the function described. Your response should only contain the code for this function.\n",
             "generic-generate": "You will be asked to read a passage and answer a question. Think step by step, then write a line of the form 'Answer: $ANSWER' at the end of your response.",
-            "math": "Solve the following math problem step by step. The last line of your response should be of the form Answer: \\$ANSWER (without quotes) where $ANSWER is the answer to the problem.\n\n{Question}\n\nRemember to put your answer on its own line after 'Answer:', and indicate your final answer in boxed LaTeX. For example, if the final answer is \sqrt{3}, write it as \boxed{{\sqrt{{3}}}}."
+            "math": "Solve the following math problem step by step. The last line of your response should be of the form Answer: \\$ANSWER (without quotes) where $ANSWER is the answer to the problem.\n\n{Question}\n\nRemember to put your answer on its own line after 'Answer:', and indicate your final answer in boxed LaTeX. For example, if the final answer is \\sqrt{{3}}, write it as \\boxed{{\\sqrt{{3}}}}."
         }
         
     def escape_braces(self, text):
@@ -106,10 +107,10 @@ class Infer:
 
 if __name__ == "__main__":
     data_file_name = "./A-data/A-data.jsonl"
-    infer = Infer(model="./saves/qwen2.5-3b-generated-x-r1-merged")
+    infer = Infer(model="./LLM-models-datasets/Qwen2.5-3B")
     res = infer.infer(data_file=data_file_name)
     
-    output_file_name = "./A-data/res-generated-x-r1-merged.json"
+    output_file_name = "./A-data/res.json"
     with open(output_file_name, "w", encoding="utf-8") as f:
         json.dump(res, f, ensure_ascii=False, indent=2)
 

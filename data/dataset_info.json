@@ -169,6 +169,20 @@
       "assistant_tag": "assistant"
     }
   },
+  "openr1_math_220k": {
+    "file_name": "../LLM-models-datasets/OpenR1-Math-220k_default/open-r1___open_r1-math-220k/default-f85bbd709552ea85/0.0.0/master/open_r1-math-220k-train-*.arrow",
+    "formatting": "sharegpt",
+    "columns": {
+      "messages": "messages"
+    },
+    "tags": {
+      "role_tag": "role",
+      "content_tag": "content",
+      "user_tag": "user",
+      "assistant_tag": "assistant",
+      "system_tag": "system"
+    }
+  },
   "codealpaca": {
     "hf_hub_url": "sahil2801/CodeAlpaca-20k",
     "ms_hub_url": "AI-ModelScope/CodeAlpaca-20k"

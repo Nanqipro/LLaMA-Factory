@@ -81,8 +81,14 @@ def _training_function(config: dict[str, Any]) -> None:
     else:
         raise ValueError(f"Unknown task: {finetuning_args.stage}.")
 
-    if is_ray_available() and ray.is_initialized():
-        return  # if ray is intialized it will destroy the process group on return
+    # 检查是否使用ray并且ray已经正确初始化
+    try:
+        if is_ray_available():
+            import ray
+            if ray.is_initialized():
+                return  # if ray is intialized it will destroy the process group on return
+    except (ImportError, NameError):
+        pass  # ray not available or not properly imported
 
     try:
         if dist.is_initialized():
@@ -99,13 +105,23 @@ def run_exp(args: Optional[dict[str, Any]] = None, callbacks: Optional[list["Tra
     ray_args = get_ray_args(args)
     callbacks = callbacks or []
     if ray_args.use_ray:
-        callbacks.append(RayTrainReportCallback())
-        trainer = get_ray_trainer(
-            training_function=_training_function,
-            train_loop_config={"args": args, "callbacks": callbacks},
-            ray_args=ray_args,
-        )
-        trainer.fit()
+        try:
+            # 确保ray和RayTrainReportCallback已经正确导入
+            if is_ray_available():
+                import ray
+                from ray.train.huggingface.transformers import RayTrainReportCallback
+                callbacks.append(RayTrainReportCallback())
+                trainer = get_ray_trainer(
+                    training_function=_training_function,
+                    train_loop_config={"args": args, "callbacks": callbacks},
+                    ray_args=ray_args,
+                )
+                trainer.fit()
+            else:
+                raise ImportError("Ray is not available")
+        except (ImportError, NameError) as e:
+            logger.warning(f"Ray training requested but Ray is not available: {e}. Falling back to regular training.")
+            _training_function(config={"args": args, "callbacks": callbacks})
     else:
         _training_function(config={"args": args, "callbacks": callbacks})
 

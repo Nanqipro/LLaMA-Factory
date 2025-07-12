@@ -15,8 +15,8 @@
 # --- 配置参数 ---
 # 请根据您的环境修改以下路径
 BASE_MODEL_PATH="./LLM-models-datasets/Qwen2.5-3B"
-ADAPTER_PATH="saves/qwen2.5-3b-bespoke-stratos/lora/sft/checkpoint-1000"
-MERGED_MODEL_PATH="saves/qwen2.5-3b-bespoke-stratos-merged1000"
+ADAPTER_PATH="saves/qwen2.5-3b-bespoke-stratos/lora/sft/checkpoint-1410"
+MERGED_MODEL_PATH="saves/qwen2.5-3b-bespoke-stratos-merged1410"
 TEMPLATE="qwen"
 # 模型导出分片大小(GB)，根据需要调整
 EXPORT_SIZE=4
